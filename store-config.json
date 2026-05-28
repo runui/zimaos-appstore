@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "store_id": "zimaos-appstore",
+  "store_id": "runui-appstore",
   "name": {
     "ca_ES": "Botiga d'aplicacions ZimaOS",
     "cs_CZ": "Obchod s aplikacemi ZimaOS",
@@ -62,5 +62,5 @@
     "zh_TW": "ZimaOS 官方應用商店，提供精選的自託管應用程式集合。"
   },
   "maintainer": "IceWhaleTech",
-  "url": "https://github.com/IceWhaleTech/CasaOS-AppStore"
+  "url": "https://github.com/runui/zimaos-appstore"
 }
