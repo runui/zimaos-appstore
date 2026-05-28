@@ -384,11 +384,11 @@ x-casaos:
   developer: CopyParty
   architectures:
     - amd64
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/CopyParty/icon.svg
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/CopyParty/icon.svg
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/CopyParty/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/CopyParty/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/CopyParty/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/CopyParty/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/CopyParty/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/CopyParty/screenshot-3.png
   index: /
   main: copyparty
   port_map: "29708"

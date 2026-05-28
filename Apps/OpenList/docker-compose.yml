@@ -328,12 +328,12 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [OpenList Resmi Web Sitesi](https://oplist.org/)
       - [OpenList GitHub](https://github.com/OpenListTeam/OpenList)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenList/icon.svg
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/OpenList/icon.svg
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenList/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenList/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenList/screenshot-3.png
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenList/thumbnail.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/OpenList/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/OpenList/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/OpenList/screenshot-3.png
+  thumbnail: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/OpenList/thumbnail.png
   tips:
     before_install:
       en_US: |

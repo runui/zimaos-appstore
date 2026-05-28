@@ -84,8 +84,8 @@ x-casaos:
   screenshot_link:
   developer: MongoDB Inc.
   author: WisdomSky
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MongoDB4/icon.svg
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MongoDB4/icon.png
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/MongoDB4/icon.svg
+  thumbnail: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/MongoDB4/icon.png
   category: Developer
   title:
     en_US: MongoDB 4

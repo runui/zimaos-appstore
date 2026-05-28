@@ -451,12 +451,12 @@ x-casaos:
       **Daha fazla bilgi:**
       - [Kavita resmi web sitesi](https://www.kavitareader.com)
       - [Kavita GitHub deposu](https://github.com/Kareadita/Kavita)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Kavita/icon.svg
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/Kavita/icon.svg
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Kavita/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Kavita/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Kavita/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Kavita/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/Kavita/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/Kavita/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/Kavita/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/Kavita/screenshot-4.png
   thumbnail: ""
   scheme: http
   port_map: "5150"

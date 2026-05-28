@@ -363,12 +363,12 @@ x-casaos:
       - [Etherpad Resmi Web Sitesi](https://etherpad.org/)
       - [Etherpad GitHub](https://github.com/ether/etherpad)
       - [Etherpad Dokümantasyonu](https://docs.etherpad.org/)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Etherpad/icon.svg
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/Etherpad/icon.svg
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Etherpad/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Etherpad/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Etherpad/screenshot-3.png
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Etherpad/thumbnail.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/Etherpad/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/Etherpad/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/Etherpad/screenshot-3.png
+  thumbnail: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore/Apps/Etherpad/thumbnail.png
   tips:
     before_install:
       en_US: |
