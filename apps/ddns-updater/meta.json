@@ -1,0 +1,26 @@
+{
+  "architectures": [
+    "amd64",
+    "arm",
+    "arm64"
+  ],
+  "author": "rstuhlmuller",
+  "category": "Networking",
+  "description": "Program to keep DNS A and/or AAAA records updated for multiple DNS providers",
+  "developer": "qmcgaw",
+  "screenshot": [
+    "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/DDNS-Updater/screenshot-1.png"
+  ],
+  "tagline": "Simple and easy to use DDNS",
+  "updateAt": "2024-12-24",
+  "releaseNotes": "- v2.9.0 adds provider support for domene.shop, loopia.se, vultr.com, myaddr.tools, and namesilo.com.\n- Health server configuration can run outside Docker or be disabled in containers.\n- Fixes include multi-address public IP handling, IPv6 hostname resolution, Porkbun, Gandi, DonDominio, Netcup, GCP, file permissions, NoIP response parsing, real IP logging, and response trimming.",
+  "website": "",
+  "repo": "https://github.com/qdm12/ddns-updater",
+  "support": "https://github.com/qdm12/ddns-updater/issues",
+  "docs": "https://github.com/qdm12/ddns-updater/tree/master/docs",
+  "title": "ddns-updater",
+  "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "categories": [
+    "networking"
+  ]
+}

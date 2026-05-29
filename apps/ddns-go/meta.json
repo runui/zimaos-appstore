@@ -1,0 +1,26 @@
+{
+  "architectures": [
+    "amd64",
+    "arm",
+    "arm64"
+  ],
+  "author": "zxxhz,Cp0204",
+  "category": "Networking",
+  "description": "A simple and easy-to-use DDNS tool. Automatically updates domain name resolution to your public IP (supports Alibaba Cloud, Tencent Cloud, Dnspod, Cloudflare, Callback, Huawei Cloud, Baidu Cloud, Porkbun, GoDaddy, and Google Domain).\n\nDeploy DDNS-go on Zima, and you can bind the public IP of your Zima device to your domain name. This way, you can access your Zima device via the domain name while you are away.\n",
+  "developer": "jeessy2",
+  "screenshot_link": [
+    "/apps/ddns-go/assets/screenshot-1.webp"
+  ],
+  "tagline": "Simple and easy to use DDNS",
+  "updateAt": "2026-05-01",
+  "releaseNotes": "- v6.17.0 adds ClouDNS support.\n- It fixes callback handling so protocol enablement is respected and the correct HTTP client is used.",
+  "website": "",
+  "repo": "https://github.com/jeessy2/ddns-go",
+  "support": "https://github.com/jeessy2/ddns-go/issues",
+  "docs": "https://github.com/jeessy2/ddns-go#readme",
+  "title": "ddns-go",
+  "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "categories": [
+    "networking"
+  ]
+}

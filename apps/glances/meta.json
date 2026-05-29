@@ -1,0 +1,25 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "author": "joaobosconff",
+  "category": "Productivity",
+  "description": "Glances is an open-source system cross-platform monitoring tool. It allows real-time monitoring of various aspects of your system such as CPU, memory, disk, network usage etc.",
+  "developer": "Nicolas Hennion",
+  "screenshot_link": [
+    "/apps/glances/assets/screenshot-1.webp"
+  ],
+  "tagline": "Cross-platform monitoring tool.",
+  "updateAt": "2025-11-05",
+  "releaseNotes": "- v4.4.1 points to the official full changelog from v4.4.0 to v4.4.1.",
+  "website": "https://nicolargo.github.io/glances/",
+  "repo": "https://github.com/nicolargo/glances",
+  "support": "https://github.com/nicolargo/glances/issues",
+  "docs": "https://glances.readthedocs.io/",
+  "title": "Glances",
+  "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "categories": [
+    "productivity"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "Handbrake is a Docker-based application for video transcoding and compression, offering powerful and flexible multimedia processing across multiple platforms.",
+  "screenshot_link": [
+    "/apps/handbrake/assets/screenshot-1.webp"
+  ],
+  "tagline": "Liberate your videos and unleash infinite possibilities.",
+  "tips": {
+    "before_install": "## Handbrake\n#### Professional video transcoding.\n"
+  },
+  "author": "self",
+  "category": "Media",
+  "hostname": "",
+  "store_app_id": "handbrake",
+  "updateAt": "2025-10-14",
+  "releaseNotes": "- v25.10.1 locks video files before checking stability in Automatic Video Converter.\n- Automatic Video Converter cleanup during container shutdown was enhanced.",
+  "website": "https://handbrake.fr",
+  "repo": "https://github.com/jlesage/docker-handbrake",
+  "support": "https://github.com/jlesage/docker-handbrake/issues",
+  "docs": "https://github.com/jlesage/docker-handbrake#readme",
+  "title": "handbrake",
+  "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "categories": [
+    "media"
+  ]
+}
