@@ -1,0 +1,29 @@
+{
+  "thumbnail": "/apps/whishper/assets/thumbnail.webp",
+  "screenshot_link": [
+    "/apps/whishper/assets/screenshot-1.webp"
+  ],
+  "tagline": "Local audio transcription and subtitling",
+  "description": "Whishper is an open-source, fully local audio transcription and subtitling suite with a web UI. It can transcribe uploaded audio or video files, process supported online media URLs through yt-dlp, export results as TXT, JSON, VTT, or SRT, and translate subtitles through LibreTranslate.\n\nThis ZimaOS package runs the CPU version with MongoDB for metadata and LibreTranslate for local translation. Whisper models and uploaded files are stored under AppData so they survive container updates and restarts.\n\n**Key Features:**\n- Local transcription powered by Faster Whisper\n- Upload files or transcribe supported media URLs\n- Export transcriptions as TXT, JSON, VTT, and SRT\n- Subtitle editor with timing and segment tools\n- Local translation through LibreTranslate\n- Persistent model cache and upload storage\n\n**Notes:**\n- First use may take time while Whisper and LibreTranslate models are downloaded.\n- Larger Whisper models require more disk space, memory, and CPU time.\n- Whishper does not provide built-in user authentication in this version; avoid exposing it directly to the public internet.\n",
+  "tips": {
+    "before_install": "## Resource Notice\n\n- This package runs on CPU by default. Transcription can be slow on low-power devices.\n- The first transcription may download Whisper models into `/app/models`.\n- LibreTranslate loads `en,zh,es,fr` by default to reduce startup cost. Edit `LT_LOAD_ONLY` if you need more languages.\n- Whishper has no built-in user login in this release. Keep it on a trusted network or protect it behind your own reverse proxy authentication.\n"
+  },
+  "author": "IceWhaleTech",
+  "developer": "pluja",
+  "category": "AI",
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "updateAt": "2026-06-10",
+  "releaseNotes": "Initial ZimaOS AppStore packaging for Whishper CPU edition.",
+  "website": "https://whishper-docs.pages.dev/",
+  "repo": "https://github.com/pluja/whishper",
+  "support": "https://github.com/pluja/whishper/issues",
+  "docs": "https://whishper-docs.pages.dev/guides/install",
+  "title": "Whishper",
+  "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "categories": [
+    "ai"
+  ]
+}
