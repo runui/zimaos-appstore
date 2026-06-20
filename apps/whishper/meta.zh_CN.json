@@ -1,9 +1,9 @@
 {
   "id": "whishper",
   "title": "Whishper",
-  "tagline": "本地音频转录与字幕工具",
-  "releaseNotes": "首次将 Whishper CPU 版本打包为 ZimaOS 应用。",
   "description": "Whishper 是一个开源的本地音频转录和字幕工具，提供 Web UI。它可以转录上传的音频或视频文件，也可以通过 yt-dlp 处理受支持的在线媒体 URL，并支持导出 TXT、JSON、VTT、SRT 格式，还可以通过 LibreTranslate 进行字幕翻译。\n\n这个 ZimaOS 应用使用 CPU 版本运行，使用 MongoDB 保存元数据，使用 LibreTranslate 提供本地翻译。Whisper 模型和上传文件都会保存到 AppData 中，容器更新或重启后仍会保留。\n\n**主要功能：**\n- 基于 Faster Whisper 的本地转录\n- 支持上传文件或转录受支持的媒体 URL\n- 支持导出 TXT、JSON、VTT、SRT\n- 带时间轴和分段工具的字幕编辑器\n- 通过 LibreTranslate 进行本地翻译\n- 持久化模型缓存和上传文件\n\n**注意事项：**\n- 首次使用时可能需要下载 Whisper 和 LibreTranslate 模型，启动和转录会比较慢。\n- 更大的 Whisper 模型会占用更多磁盘、内存和 CPU 时间。\n- 当前版本 Whishper 没有内置用户认证，不建议直接暴露到公网。\n",
+  "releaseNotes": "首次将 Whishper CPU 版本打包为 ZimaOS 应用。",
+  "tagline": "本地音频转录与字幕工具",
   "tips": {
     "before_install": "## 资源提示\n\n- 该应用默认使用 CPU 运行，低功耗设备上的转录速度可能较慢。\n- 首次转录可能会将 Whisper 模型下载到 `/app/models`。\n- LibreTranslate 默认只加载 `en,zh,es,fr` 以降低启动成本，如需更多语言请修改 `LT_LOAD_ONLY`。\n- 当前版本 Whishper 没有内置用户登录功能，请仅在可信网络中使用，或通过自己的反向代理认证进行保护。\n"
   }
