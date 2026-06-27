@@ -12,15 +12,18 @@
     "amd64",
     "arm64"
   ],
-  "updateAt": "2025-12-19",
-  "releaseNotes": "",
+  "update_at": "2026-05-01",
+  "release_notes": "",
   "website": "https://fossil.kd2.org/opodsync/",
   "repo": "https://github.com/kd2org/oPodSync",
   "support": "https://github.com/kd2org/oPodSync/issues",
   "docs": "https://github.com/kd2org/oPodSync#readme",
   "title": "oPodSync",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.opodsync",
   "categories": [
     "media"
-  ]
+  ],
+  "min_memory": 536870912,
+  "min_image_size": 0
 }

@@ -1,5 +1,6 @@
 {
   "id": "smokeping",
-  "description": "śledzi opóźnienia sieci.",
-  "tagline": "Darmowe narzędzie do monitorowania wydajności sieci otwartego kodu źródłowego"
+  "app_id": "org.icewhale.smokeping",
+  "tagline": "Darmowe narzędzie do monitorowania wydajności sieci otwartego kodu źródłowego",
+  "description": "śledzi opóźnienia sieci."
 }

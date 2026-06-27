@@ -40,10 +40,13 @@ services:
       DEBUG: 'true'
       UPDATE: 'false'
 x-casaos:
+  app_id: org.icewhale.subgen
   main: subgen
   index: /docs
   port_map: '19000'
   scheme: http
-  title: Subgen
+  title:
+    en_US: Subgen
+    zh_CN: Subgen
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/subgen/assets/icon.png
   version: 2026.06.4

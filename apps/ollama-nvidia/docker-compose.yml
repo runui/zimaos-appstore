@@ -24,10 +24,12 @@ services:
       source: /DATA/AppData/$AppID/
       target: /root/.ollama
 x-casaos:
+  app_id: org.icewhale.ollamanvidia
   main: ollama
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/ollama-nvidia/assets/icon.svg
   scheme: http
   port_map: '11434'
   index: /
-  title: Ollama(Nvidia GPU)
+  title:
+    en_US: Ollama(Nvidia GPU)
   version: 0.9.5

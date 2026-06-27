@@ -1,7 +1,7 @@
 name: audiobookshelf
 services:
   audiobookshelf:
-    image: ghcr.io/advplyr/audiobookshelf:2.30.0
+    image: ghcr.io/advplyr/audiobookshelf:2.35.0
     container_name: audiobookshelf
     deploy:
       resources:
@@ -16,10 +16,12 @@ services:
     ports:
     - 13378:80
 x-casaos:
+  app_id: org.icewhale.audiobookshelf
   main: audiobookshelf
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/audiobookshelf/assets/icon.svg
   scheme: http
   port_map: '13378'
   index: /
-  title: Audiobookshelf
-  version: 2.30.0
+  title:
+    en_US: Audiobookshelf
+  version: 2.35.0

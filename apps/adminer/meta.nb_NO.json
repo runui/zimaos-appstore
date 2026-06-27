@@ -1,4 +1,5 @@
 {
   "id": "adminer",
-  "releaseNotes": "- v5.4.1 fikser frakobling av NULL primærnøkler fra SQL kommando.\n- CSV eksport angir ikke lenger nullverdier, og import advarer når upload_max_filesize overskrides.\n- Lagrede SQL kommandospørringer kan forlenges til URL, og MySQL rutinedefinisjonsvisning ble fikset."
+  "app_id": "org.icewhale.adminer",
+  "release_notes": "- v5.4.2 avoids a denial-of-service issue in the version check.\n- It improves JSON display, generated values, exports, database support, and plugins."
 }

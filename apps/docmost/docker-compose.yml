@@ -1,7 +1,7 @@
 name: docmost
 services:
   docmost:
-    image: docmost/docmost:0.21.0
+    image: docmost/docmost:0.90.0
     container_name: docmost
     deploy:
       resources:
@@ -54,10 +54,12 @@ networks:
   docmost-network:
     driver: bridge
 x-casaos:
+  app_id: org.icewhale.docmost
   main: docmost
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/docmost/assets/icon.svg
   scheme: http
   port_map: '3000'
   index: /
-  title: Docmost
-  version: 0.21.0
+  title:
+    en_US: Docmost
+  version: 0.90.0

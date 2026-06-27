@@ -28,8 +28,10 @@ services:
       target: /notes
     container_name: logseq
 x-casaos:
+  app_id: org.icewhale.logseq
   main: logseq
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/logseq/assets/icon.svg
-  title: Logseq
+  title:
+    en_US: Logseq
   port_map: '3325'
-  version: v0.10.10
+  version: 0.10.10

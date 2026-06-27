@@ -47,9 +47,12 @@ services:
       target: /config
     container_name: unifi-controller
 x-casaos:
+  app_id: org.icewhale.unificontroller
   main: unifi-controller
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/unifi-controller/assets/icon.svg
-  title: Unifi-controller [legacy]
+  title:
+    en_US: Unifi-controller [legacy]
+    zh_CN: Unifi控制器 [legacy]
   index: /
   port_map: '8383'
   version: 8.0.7

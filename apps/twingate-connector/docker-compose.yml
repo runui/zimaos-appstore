@@ -21,9 +21,11 @@ services:
         reservations:
           memory: 500M
 x-casaos:
+  app_id: org.icewhale.twingateconnector
   main: twingate-connector
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/twingate-connector/assets/icon.svg
-  title: Twingate
+  title:
+    en_US: Twingate
   index: /
   port_map: ''
-  version: '1'
+  version: 1.0.0

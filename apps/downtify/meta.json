@@ -12,15 +12,18 @@
     "/apps/downtify/assets/screenshot-2.webp"
   ],
   "tagline": "Download Spotify music with album art and metadata",
-  "updateAt": "2026-05-03",
-  "releaseNotes": "- 2.6.0 adds the option to save music into artist folders.\n- It adds a setting to disable lyric downloads.\n- It fixes download history clearing and settings persistence.",
+  "update_at": "2026-05-11",
+  "release_notes": "- v2.7.0 adds configurable parallel downloads.\n- It adds weekly and monthly playlist synchronization intervals.\n- Dependency maintenance updates are included.",
   "website": "https://downtify.henriquesebastiao.com",
   "repo": "https://github.com/henriquesebastiao/downtify",
   "support": "https://github.com/henriquesebastiao/downtify/issues",
   "docs": "https://github.com/henriquesebastiao/downtify#readme",
   "title": "Downtify",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.downtify",
   "categories": [
     "media"
-  ]
+  ],
+  "min_memory": 2147483648,
+  "min_image_size": 85694556
 }

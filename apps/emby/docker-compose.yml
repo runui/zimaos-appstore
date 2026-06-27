@@ -11,7 +11,7 @@ services:
       PGID: '1000'
       PUID: '1000'
       TZ: $TZ
-    image: linuxserver/emby:4.9.1
+    image: linuxserver/emby:4.9.5
     deploy:
       resources:
         reservations:
@@ -37,9 +37,11 @@ services:
       target: /data/movies
     container_name: emby
 x-casaos:
+  app_id: org.icewhale.emby
   main: emby
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/emby/assets/icon.svg
-  title: Emby
+  title:
+    en_US: Emby
   index: /
   port_map: '8096'
-  version: 4.9.1
+  version: 4.9.5

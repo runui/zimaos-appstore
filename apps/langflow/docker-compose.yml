@@ -2,7 +2,7 @@ name: langflow
 services:
   langflow:
     container_name: langflow
-    image: langflowai/langflow:1.5.0
+    image: langflowai/langflow:1.9.3
     user: 0:0
     ports:
     - target: 7860
@@ -34,10 +34,26 @@ networks:
   langflow-net:
     driver: bridge
 x-casaos:
+  app_id: org.icewhale.langflow
   main: langflow
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/langflow/assets/icon.svg
   scheme: http
   port_map: '17860'
   index: /
-  title: Langflow
-  version: 1.5.0
+  title:
+    en_US: Langflow
+    en_GB: Langflow
+    it_IT: Langflow
+    nb_NO: Langflow
+    zh_CN: Langflow
+    ja_JP: Langflow
+    ko_KR: Langflow
+    fr_FR: Langflow
+    de_DE: Langflow
+    sv_SE: Langflow
+    el_GR: Langflow
+    hr_HR: Langflow
+    pt_PT: Langflow
+    ru_RU: Langflow
+    tr_TR: Langflow
+  version: 1.9.3

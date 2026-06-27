@@ -27,9 +27,11 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
+  app_id: org.icewhale.webdav
   main: webdav
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/webdav/assets/icon.svg
-  title: WebDAV
+  title:
+    en_US: WebDAV
   index: /
   port_map: '5005'
-  version: amd64
+  version: 0.0.1

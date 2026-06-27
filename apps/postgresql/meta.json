@@ -8,20 +8,23 @@
   "tagline": "PostgreSQL is an advanced, enterprise-class, and open-source relational database system. PostgreSQL supports both SQL (relational) and JSON (non-relational) querying.",
   "developer": "PostgreSQL Global Dev't Group",
   "author": "WisdomSky",
-  "thumbnail": "/apps/postgresql/assets/icon.svg",
+  "thumbnail": "",
   "tips": {
     "before_install": "Default user: `casaos`\nDefault password: `casaos`\nDefault database: `casaos`\n"
   },
   "category": "Developer",
-  "updateAt": "2025-03-18",
-  "releaseNotes": "- PostgreSQL 17.4 fixes libpq quoting behavior after CVE-2025-1094 so length-limited strings are handled correctly.\n- The release also fixes a pg_createsubscriber memory leak and a Meson build-system header detection issue.",
+  "update_at": "2025-04-29",
+  "release_notes": "- PostgreSQL 17.4 fixes libpq quoting behavior after CVE-2025-1094 so length-limited strings are handled correctly.\n- The release also fixes a pg_createsubscriber memory leak and a Meson build-system header detection issue.",
   "website": "https://www.postgresql.org",
   "repo": "https://github.com/postgres/postgres",
   "support": "https://www.postgresql.org/support/",
   "docs": "https://www.postgresql.org/docs/17/",
   "title": "PostgreSQL",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.postgresql",
   "categories": [
     "developer"
-  ]
+  ],
+  "min_memory": 2147483648,
+  "min_image_size": 156297490
 }

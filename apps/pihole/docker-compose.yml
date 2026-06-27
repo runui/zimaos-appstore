@@ -5,7 +5,7 @@ services:
       TZ: $TZ
       FTLCONF_webserver_api_password: casaos
       FTLCONF_dns_listeningMode: all
-    image: pihole/pihole:2025.11.1
+    image: pihole/pihole:2026.05.0
     deploy:
       resources:
         reservations:
@@ -33,9 +33,11 @@ services:
     - NET_ADMIN
     container_name: pihole
 x-casaos:
+  app_id: org.icewhale.pihole
   main: pihole
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/pihole/assets/icon.svg
-  title: Pi-hole
+  title:
+    en_US: Pi-hole
   index: /admin
   port_map: '8800'
-  version: 2025.11.1
+  version: 2026.5.0

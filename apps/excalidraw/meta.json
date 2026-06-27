@@ -15,15 +15,18 @@
     "/apps/excalidraw/assets/screenshot-5.webp"
   ],
   "thumbnail": "",
-  "updateAt": "2025-08-06",
-  "releaseNotes": "",
+  "update_at": "2026-05-06",
+  "release_notes": "",
   "website": "https://excalidraw.com/",
   "repo": "https://github.com/excalidraw/excalidraw",
   "support": "https://github.com/excalidraw/excalidraw/issues",
   "docs": "https://docs.excalidraw.com",
   "title": "Excalidraw",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.excalidraw",
   "categories": [
     "productivity"
-  ]
+  ],
+  "min_memory": 268435456,
+  "min_image_size": 43247225
 }

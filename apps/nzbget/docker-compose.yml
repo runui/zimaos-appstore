@@ -7,7 +7,7 @@ services:
       PGID: '1000'
       PUID: '1000'
       TZ: Europe/London
-    image: linuxserver/nzbget:25.4.20251205
+    image: linuxserver/nzbget:26.1.20260522
     deploy:
       resources:
         reservations:
@@ -27,8 +27,10 @@ services:
       target: /downloads
     container_name: nzbget
 x-casaos:
+  app_id: org.icewhale.nzbget
   main: nzbget
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/nzbget/assets/icon.svg
-  title: Nzbget
+  title:
+    en_US: Nzbget
   port_map: '6789'
-  version: 25.4.20251205
+  version: 26.1.20260522

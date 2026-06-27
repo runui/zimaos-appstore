@@ -1,0 +1,10 @@
+{
+  "id": "harbor",
+  "app_id": "org.icewhale.harbor",
+  "title": "Harbor",
+  "tagline": "云原生镜像仓库",
+  "description": "Harbor 是一个开源的云原生镜像仓库项目，用于存储、签名和扫描容器镜像。它在 Docker Distribution 的基础上扩展了安全、身份和管理等功能。此软件包包含 Harbor 核心服务、Web 门户、任务服务、镜像仓库、PostgreSQL 数据库和 Valkey 缓存（兼容 Redis）。支持镜像复制、漏洞扫描（可选，需 Trivy 组件）和基于角色的访问控制。\n\n默认登录凭据: admin / Harbor12345\n",
+  "tips": {
+    "before_install": "Harbor 是一个大型应用，至少需要 4 GB 内存和 2 个 CPU 核心。首次启动可能需要 2-3 分钟，等待 PostgreSQL 初始化和所有服务就绪。\n\n默认管理员凭据: admin / Harbor12345\n安装后请通过 Web UI 修改管理员密码。\n\n镜像仓库端口为 18080。推送/拉取镜像前，需要配置 Docker 守护进程的仓库地址。\n"
+  }
+}

@@ -1,7 +1,7 @@
 name: icewhale-stable-diffusion-webui
 services:
   icewhale-stable-diffusion-webui:
-    image: johnguan/stable-diffusion-webui@sha256:9f147d4995464dda8c9e625be91e21ce553d1617e95cb0ebcf23be40e840063b
+    image: johnguan/stable-diffusion-webui:latest
     runtime: nvidia
     ipc: host
     environment:
@@ -30,10 +30,12 @@ services:
     privileged: false
     container_name: icewhale-stable-diffusion-webui
 x-casaos:
+  app_id: org.icewhale.icewhalestablediffusionwebui
   main: icewhale-stable-diffusion-webui
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/icewhale-stable-diffusion-webui/assets/icon.svg
   scheme: http
-  title: Stable Diffusion
+  title:
+    en_US: Stable Diffusion
   index: /
   port_map: '7860'
-  version: latest
+  version: 9.0.0

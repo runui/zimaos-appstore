@@ -15,7 +15,7 @@ services:
     - PGID=$PGID
     - PUID=$PUID
     - TZ=$TZ
-    image: lscr.io/linuxserver/unifi-network-application@sha256:98b519abdd4a9fae5122bcd6daa48018b38d6e66eeb64c48eed7789652703424
+    image: lscr.io/linuxserver/unifi-network-application@sha256:5754d5fa5c47943fb01153a02a55f2d49a5013d017a22ba3810e16fef417138d
     ports:
     - target: 8443
       published: '8443'
@@ -69,10 +69,12 @@ configs:
       ).createUser({user: \"unifi\", pwd: \"pass\", roles: [{role: \"dbOwner\", db:\
       \ \"unifi-db_stat\"}]});\n"
 x-casaos:
+  app_id: org.icewhale.unifinetworkapplication
   main: unifi-network-application
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/unifi-network-application/assets/icon.svg
   index: /
   port_map: '8443'
   scheme: https
-  title: Unifi Network Application
-  version: latest
+  title:
+    en_US: Unifi Network Application
+  version: 10.4.57-ls133

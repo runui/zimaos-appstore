@@ -15,15 +15,18 @@
   "tagline": "Jellyseerr is a free and open source software application for managing requests for your media library.",
   "thumbnail": "",
   "tips": {},
-  "updateAt": "",
-  "releaseNotes": "",
-  "website": "",
-  "repo": "",
-  "support": "",
-  "docs": "",
+  "update_at": "2025-08-14",
+  "release_notes": "- Jellyseerr v2.7.3 fixes API docs and makes the UserSettings username field nullable.\n- It updates the Plex Watchlist URL, handles invalid blacklist keywords gracefully, and refreshes media state before MEDIA_AVAILABLE notifications.\n- It also fixes 4K media delete handling and initializes image proxies after proxy setup.",
+  "website": "https://seerr.dev/",
+  "repo": "https://github.com/Fallenbagel/jellyseerr",
+  "support": "https://github.com/Fallenbagel/jellyseerr/issues",
+  "docs": "https://docs.seerr.dev/",
   "title": "Jellyseerr",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.jellyseerr",
   "categories": [
     "media"
-  ]
+  ],
+  "min_memory": 268435456,
+  "min_image_size": 428781775
 }

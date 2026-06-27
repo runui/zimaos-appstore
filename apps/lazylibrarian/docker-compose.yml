@@ -29,8 +29,10 @@ services:
       target: /config
     container_name: lazylibrarian
 x-casaos:
+  app_id: org.icewhale.lazylibrarian
   main: lazylibrarian
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/lazylibrarian/assets/icon.svg
-  title: Lazylibrarian
+  title:
+    en_US: Lazylibrarian
   port_map: '5299'
-  version: version-169e669f
+  version: 0.0.0-version-169e669f

@@ -50,10 +50,12 @@ networks:
   monica_network:
     driver: bridge
 x-casaos:
+  app_id: org.icewhale.monica
   main: monica
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/monica/assets/icon.svg
   scheme: ''
   port_map: '18930'
   index: /
-  title: Monica
+  title:
+    en_US: Monica
   version: 4.1.2

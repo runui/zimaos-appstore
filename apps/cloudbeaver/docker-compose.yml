@@ -7,7 +7,7 @@ services:
       resources:
         reservations:
           memory: 256M
-    image: dbeaver/cloudbeaver:25.2.5
+    image: dbeaver/cloudbeaver:26.0.5
     ports:
     - target: 8978
       published: '8978'
@@ -20,9 +20,12 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
+  app_id: org.icewhale.cloudbeaver
   main: cloudbeaver
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/cloudbeaver/assets/icon.svg
-  title: CloudBeaver
+  title:
+    en_US: CloudBeaver
+    pt_BR: CloudBeaver
   index: /
   port_map: '8978'
-  version: 25.2.5
+  version: 26.0.5

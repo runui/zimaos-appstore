@@ -1,7 +1,7 @@
 name: threadfin
 services:
   threadfin:
-    image: fyb3roptik/threadfin@sha256:863fb0c2945617b4aa48b79eaa655954df72d68fbee6e49a1465934ceb3f057e
+    image: fyb3roptik/threadfin:1.2.37
     restart: unless-stopped
     environment:
     - THREADFIN_BRANCH=main
@@ -19,10 +19,13 @@ services:
       target: /home/threadfin/conf/backup
     container_name: threadfin
 x-casaos:
+  app_id: org.icewhale.threadfin
   main: threadfin
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/threadfin/assets/icon.svg
   index: /web/
   port_map: '34400'
   scheme: http
-  title: Threadfin
-  version: latest
+  title:
+    en_US: Threadfin
+    zh_CN: Threadfin
+  version: 1.2.37

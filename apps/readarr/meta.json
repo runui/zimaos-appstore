@@ -16,15 +16,18 @@
   "tagline": "Ebook and audiobook collection manager for Usenet and BitTorrent users.",
   "thumbnail": "/apps/readarr/assets/thumbnail.webp",
   "tips": {},
-  "updateAt": "2023-12-05",
-  "releaseNotes": "",
+  "update_at": "2023-12-07",
+  "release_notes": "",
   "website": "https://readarr.com",
   "repo": "https://github.com/Readarr/Readarr",
   "support": "https://wiki.servarr.com/readarr",
   "docs": "https://wiki.servarr.com/readarr",
   "title": "Readarr",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.readarr",
   "categories": [
     "media"
-  ]
+  ],
+  "min_memory": 67108864,
+  "min_image_size": 0
 }

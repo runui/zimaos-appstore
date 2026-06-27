@@ -12,15 +12,18 @@
   ],
   "author": "Pierre Balzack",
   "category": "Social",
-  "updateAt": "2025-11-28",
-  "releaseNotes": "",
+  "update_at": "2025-10-15",
+  "release_notes": "",
   "website": "",
   "repo": "https://github.com/balzack/databag",
   "support": "https://github.com/balzack/databag/discussions",
   "docs": "https://github.com/balzack/databag/tree/main/doc",
   "title": "Databag",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.databag",
   "categories": [
     "social"
-  ]
+  ],
+  "min_memory": 0,
+  "min_image_size": 250701066
 }

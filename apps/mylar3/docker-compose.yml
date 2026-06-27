@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: linuxserver/mylar3:0.8.3
+    image: linuxserver/mylar3:0.9.0
     deploy:
       resources:
         reservations:
@@ -28,8 +28,10 @@ services:
       target: /downloads
     container_name: mylar3
 x-casaos:
+  app_id: org.icewhale.mylar3
   main: mylar3
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/mylar3/assets/icon.svg
-  title: Mylar3
+  title:
+    en_US: Mylar3
   port_map: '8090'
-  version: 0.8.3
+  version: 0.9.0

@@ -25,9 +25,11 @@ services:
       target: /downloads
     container_name: pinchflat
 x-casaos:
+  app_id: org.icewhale.pinchflat
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/pinchflat/assets/icon.svg
   main: pinchflat
   port_map: '8945'
   scheme: http
-  title: Pinchflat
-  version: latest
+  title:
+    en_US: Pinchflat
+  version: 2025.9.26

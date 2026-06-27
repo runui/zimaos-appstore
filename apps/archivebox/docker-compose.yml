@@ -1,7 +1,7 @@
 name: archivebox
 services:
   archivebox:
-    image: archivebox/archivebox:0.7.3
+    image: archivebox/archivebox:0.7.4
     container_name: archivebox
     deploy:
       resources:
@@ -42,7 +42,7 @@ services:
       interval: 1m
       timeout: 3s
   archivebox_scheduler:
-    image: archivebox/archivebox:0.7.3
+    image: archivebox/archivebox:0.7.4
     container_name: archivebox_scheduler
     deploy:
       resources:
@@ -86,7 +86,7 @@ services:
       source: /DATA/AppData/$AppID/data/sonic
       target: /var/lib/sonic/store
   archivebox_novnc:
-    image: theasp/novnc@sha256:1371f18087ee68af4730c2a106c06e60d8550c30f4a830cef44a8e524568cabb
+    image: theasp/novnc@sha256:422644b61cf1d78a296a276f808458633c8b5a7838dbe3da1041d90a05c83e0a
     container_name: archivebox_novnc
     deploy:
       resources:
@@ -107,10 +107,26 @@ networks:
   archivebox_network:
     driver: bridge
 x-casaos:
+  app_id: org.icewhale.archivebox
   main: archivebox
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/archivebox/assets/icon.svg
   scheme: http
   port_map: '18010'
   index: /
-  title: ArchiveBox
-  version: 0.7.3
+  title:
+    en_US: ArchiveBox
+    en_GB: ArchiveBox
+    it_IT: ArchiveBox
+    nb_NO: ArchiveBox
+    zh_CN: ArchiveBox
+    ja_JP: ArchiveBox
+    ko_KR: ArchiveBox
+    fr_FR: ArchiveBox
+    de_DE: ArchiveBox
+    sv_SE: ArchiveBox
+    el_GR: ArchiveBox
+    hr_HR: ArchiveBox
+    pt_PT: ArchiveBox
+    ru_RU: ArchiveBox
+    tr_TR: ArchiveBox
+  version: 0.7.4

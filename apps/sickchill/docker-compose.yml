@@ -28,8 +28,10 @@ services:
       target: /tv
     container_name: sickchill
 x-casaos:
+  app_id: org.icewhale.sickchill
   main: sickchill
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/sickchill/assets/icon.svg
-  title: Sickchill
+  title:
+    en_US: Sickchill
   port_map: '8081'
   version: 2023.6.27

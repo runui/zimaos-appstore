@@ -1,4 +1,5 @@
 {
   "id": "myspeed",
-  "releaseNotes": "- Προστέθηκε διαχείριση αποθήκευσης.\n- Προστέθηκε LibreSpeed και υποστήριξη Cloudflare Speed.\n- Προστέθηκαν βελτιώσεις στο τελικό σημείο Prometheus και notification-related."
+  "app_id": "org.icewhale.myspeed",
+  "release_notes": "- Προστέθηκε διαχείριση αποθήκευσης.\n- Προστέθηκε LibreSpeed και υποστήριξη Cloudflare Speed.\n- Προστέθηκαν βελτιώσεις στο τελικό σημείο Prometheus και notification-related."
 }

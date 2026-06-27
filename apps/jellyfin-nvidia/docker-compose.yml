@@ -51,9 +51,11 @@ services:
       target: /opt/vc/lib
     container_name: jellyfin
 x-casaos:
+  app_id: org.icewhale.jellyfinnvidia
   main: jellyfin
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/jellyfin-nvidia/assets/icon.svg
-  title: Jellyfin(Nvidia GPU)
+  title:
+    en_US: Jellyfin(Nvidia GPU)
   index: /
   port_map: '8097'
   version: 10.10.6

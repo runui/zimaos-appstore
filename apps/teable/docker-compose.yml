@@ -1,7 +1,7 @@
 name: teable
 services:
   teable:
-    image: teableio/teable@sha256:c042b65751fd2d36d33c25fc35accb32ac6550bd790adc59a6062f491b84cf39
+    image: teableio/teable:latest
     container_name: teable
     restart: unless-stopped
     deploy:
@@ -90,10 +90,26 @@ networks:
     name: teable-network
     driver: bridge
 x-casaos:
-  title: Teable
+  app_id: org.icewhale.teable
+  title:
+    de_DE: Teable
+    el_GR: Teable
+    en_GB: Teable
+    en_US: Teable
+    fr_FR: Teable
+    hr_HR: Teable
+    it_IT: Teable
+    ja_JP: Teable
+    ko_KR: Teable
+    nb_NO: Teable
+    pt_PT: Teable
+    ru_RU: Teable
+    sv_SE: Teable
+    tr_TR: Teable
+    zh_CN: Teable
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/teable/assets/icon.svg
   main: teable
   port_map: '3200'
   index: /
   scheme: http
-  version: latest
+  version: 0.0.1

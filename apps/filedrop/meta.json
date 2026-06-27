@@ -11,15 +11,18 @@
     "/apps/filedrop/assets/screenshot-1.webp"
   ],
   "category": "Productivity",
-  "updateAt": "2024-01-25",
-  "releaseNotes": "",
+  "update_at": "2023-09-13",
+  "release_notes": "",
   "website": "",
   "repo": "",
   "support": "",
   "docs": "",
   "title": "FileDrop",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.filedrop",
   "categories": [
     "productivity"
-  ]
+  ],
+  "min_memory": 2147483648,
+  "min_image_size": 6387454
 }

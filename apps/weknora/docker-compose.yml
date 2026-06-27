@@ -302,10 +302,26 @@ networks:
   weknora-network:
     driver: bridge
 x-casaos:
-  title: WeKnora
+  app_id: org.icewhale.weknora
+  title:
+    de_DE: WeKnora
+    el_GR: WeKnora
+    en_GB: WeKnora
+    en_US: WeKnora
+    fr_FR: WeKnora
+    hr_HR: WeKnora
+    it_IT: WeKnora
+    ja_JP: WeKnora
+    ko_KR: WeKnora
+    nb_NO: WeKnora
+    pt_PT: WeKnora
+    ru_RU: WeKnora
+    sv_SE: WeKnora
+    tr_TR: WeKnora
+    zh_CN: WeKnora
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/weknora/assets/icon.svg
   main: weknora
   port_map: '1080'
   index: /
   scheme: http
-  version: v0.2.14
+  version: 0.2.14

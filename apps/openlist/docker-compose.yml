@@ -1,7 +1,7 @@
 name: openlist
 services:
   openlist:
-    image: openlistteam/openlist:v4.2.1
+    image: openlistteam/openlist:v4.2.2
     container_name: openlist
     deploy:
       resources:
@@ -22,10 +22,12 @@ services:
       UMASK: '022'
       OPENLIST_ADMIN_PASSWORD: casaos
 x-casaos:
+  app_id: org.icewhale.openlist
   main: openlist
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/openlist/assets/icon.svg
   scheme: http
   port_map: '5244'
   index: /
-  title: OpenList
-  version: 4.2.1
+  title:
+    en_US: OpenList
+  version: 4.2.2

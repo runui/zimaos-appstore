@@ -26,9 +26,11 @@ services:
       target: /DATA
     container_name: qbittorrent
 x-casaos:
+  app_id: org.icewhale.qbittorrent
   main: qbittorrent
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/qbittorrent/assets/icon.svg
-  title: qBittorrent
+  title:
+    en_US: qBittorrent
   index: /
   port_map: '8181'
-  version: release-5.0.4
+  version: 5.0.4

@@ -1,7 +1,7 @@
 name: swingmusic
 services:
   swingmusic:
-    image: ghcr.io/swingmx/swingmusic:v1.4.8
+    image: ghcr.io/swingmx/swingmusic:v2.1.4
     container_name: swingmusic
     volumes:
     - type: bind
@@ -14,9 +14,12 @@ services:
     - 1970:1970
     restart: unless-stopped
 x-casaos:
+  app_id: org.icewhale.swingmusic
   main: swingmusic
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/swingmusic/assets/icon.svg
-  title: Swing Music
+  title:
+    en_US: Swing Music
+    zh_CN: Swing Music
   index: /
   port_map: '1970'
-  version: v1.4.8
+  version: 2.1.4

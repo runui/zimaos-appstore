@@ -13,15 +13,18 @@
     "/apps/esphome/assets/screenshot-2.webp"
   ],
   "store_app_id": "esphome",
-  "updateAt": "2025-11-19",
-  "releaseNotes": "- 2025.11.0 points to the official ESPHome changelog for this release.\n- This app tracks the upstream ESPHome 2025.11.0 release.",
+  "update_at": "2026-05-24",
+  "release_notes": "- 2026.5.1 includes fixes from the ESPHome 2026.5 release cycle.\n- Updates zeroconf dependency versions used by ESPHome.\n- Includes upstream maintenance and bug fixes for the ESPHome dashboard/runtime.",
   "website": "https://esphome.io",
   "repo": "https://github.com/esphome/esphome",
   "support": "https://github.com/esphome/issues/issues",
   "docs": "https://esphome.io",
   "title": "ESPHome",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.esphome",
   "categories": [
     "home"
-  ]
+  ],
+  "min_memory": 536870912,
+  "min_image_size": 352710458
 }

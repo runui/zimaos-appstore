@@ -7,7 +7,7 @@ services:
       resources:
         reservations:
           memory: 256M
-    image: triliumnext/trilium:v0.99.3
+    image: triliumnext/trilium:v0.103.0
     ports:
     - target: 8080
       published: '8088'
@@ -20,9 +20,12 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
+  app_id: org.icewhale.trilium
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/trilium/assets/icon.svg
   index: /
   port_map: '8088'
   scheme: http
-  title: Trilium
-  version: v0.99.3
+  title:
+    en_US: Trilium
+    zh_CN: Trilium
+  version: 0.103.0

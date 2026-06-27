@@ -1,5 +1,6 @@
 {
   "id": "virtmanager",
-  "description": "Ein GTK Broadway Web UI für libvirt und virt-manager, um virtuelle Maschinen mit QEMU/KVM zu betreiben。",
-  "tagline": "Ein GTK Broadway Web UI für libvirt und virt-manager."
+  "app_id": "org.icewhale.virtmanager",
+  "tagline": "Ein GTK Broadway Web UI für libvirt und virt-manager.",
+  "description": "Ein GTK Broadway Web UI für libvirt und virt-manager, um virtuelle Maschinen mit QEMU/KVM zu betreiben。"
 }

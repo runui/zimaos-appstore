@@ -1,7 +1,7 @@
 name: adminer
 services:
   adminer:
-    image: adminer:5.4.1
+    image: adminer:5.4.2
     deploy:
       resources:
         reservations:
@@ -11,8 +11,10 @@ services:
     - 8080:8080
     container_name: adminer
 x-casaos:
+  app_id: org.icewhale.adminer
   main: adminer
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/adminer/assets/icon.svg
-  title: Adminer
+  title:
+    en_US: Adminer
   port_map: '8080'
-  version: 5.4.1
+  version: 5.4.2

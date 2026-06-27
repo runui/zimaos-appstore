@@ -44,9 +44,11 @@ services:
       target: /data/movies
     container_name: emby
 x-casaos:
+  app_id: org.icewhale.embynvidia
   main: emby
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/emby-nvidia/assets/icon.svg
-  title: Emby(Nvidia GPU)
+  title:
+    en_US: Emby(Nvidia GPU)
   index: /
   port_map: '8096'
   version: 4.9.1

@@ -16,15 +16,18 @@
   "tips": {
     "before_install": "The first run will download the model (~5-10GB), which may take some time."
   },
-  "updateAt": "2026-03-27",
-  "releaseNotes": "",
+  "update_at": "2025-12-10",
+  "release_notes": "",
   "website": "",
   "repo": "https://github.com/rdumasia303/deepseek_ocr_app",
   "support": "https://github.com/rdumasia303/deepseek_ocr_app/issues",
   "docs": "https://github.com/rdumasia303/deepseek_ocr_app#readme",
   "title": "DeepSeek OCR(Nvidia GPU)",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.deepseekocrnvidia",
   "categories": [
     "ai"
-  ]
+  ],
+  "min_memory": 9126805504,
+  "min_image_size": 8671509981
 }

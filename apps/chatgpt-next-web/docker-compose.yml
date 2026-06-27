@@ -21,8 +21,10 @@ services:
     restart: unless-stopped
     container_name: chatgpt-next-web
 x-casaos:
+  app_id: org.icewhale.chatgptnextweb
   main: chatgpt-next-web
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/chatgpt-next-web/assets/icon.svg
-  title: ChatGPT Next Web
+  title:
+    en_US: ChatGPT Next Web
   port_map: '3000'
-  version: v2.16.1
+  version: 2.16.1

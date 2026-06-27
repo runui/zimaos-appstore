@@ -1,7 +1,7 @@
 name: overseerr
 services:
   overseerr:
-    image: linuxserver/overseerr:1.33.2
+    image: linuxserver/overseerr:1.35.0
     restart: unless-stopped
     environment:
       PUID: $PUID
@@ -17,8 +17,10 @@ services:
       target: /config
     container_name: overseerr
 x-casaos:
+  app_id: org.icewhale.overseerr
   main: overseerr
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/overseerr/assets/icon.svg
-  title: Overseerr
+  title:
+    en_US: Overseerr
   port_map: '5055'
-  version: 1.33.2
+  version: 1.35.0

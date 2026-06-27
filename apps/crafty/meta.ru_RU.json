@@ -1,6 +1,7 @@
 {
   "id": "crafty",
-  "releaseNotes": "- Crafty 4.4.11 — это настроенный выпуск образа из the, вышестоящего проекта GitLab.\n- Для этого приложения не доступен журнал изменений GitHub, поскольку Crafty публикует выпуски из GitLab.",
+  "app_id": "org.icewhale.crafty",
+  "release_notes": "- v4.10.4 fixes servers with registered webhooks failing to start.\n- This update follows the Crafty v4.10.4 GitLab release.",
   "tips": {
     "before_install": "Учетная запись по умолчанию\n| Имя пользователя | Пароль |\n|----------|----------|\n| `admin`    | `app/config/default-creds.txt` |\n"
   }

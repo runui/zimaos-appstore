@@ -1,7 +1,7 @@
 name: wallabag
 services:
   wallabag:
-    image: wallabag/wallabag:2.6.13
+    image: wallabag/wallabag:2.6.14
     container_name: wallabag
     deploy:
       resources:
@@ -31,10 +31,12 @@ services:
       interval: 1m
       timeout: 3s
 x-casaos:
+  app_id: org.icewhale.wallabag
   main: wallabag
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/wallabag/assets/icon.svg
   scheme: http
   port_map: '25661'
   index: /
-  title: Wallabag
-  version: 2.6.13
+  title:
+    en_US: Wallabag
+  version: 2.6.14

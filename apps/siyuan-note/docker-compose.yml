@@ -5,7 +5,7 @@ services:
     environment:
       PUID: '1000'
       PGID: '1000'
-    image: b3log/siyuan:v3.0.1
+    image: b3log/siyuan:v3.6.5
     deploy:
       resources:
         reservations:
@@ -22,9 +22,12 @@ services:
       target: /siyuan/workspace
     container_name: siyuan-note
 x-casaos:
+  app_id: org.icewhale.siyuannote
   main: siyuan-note
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/siyuan-note/assets/icon.svg
-  title: SiYuan Note
+  title:
+    en_US: SiYuan Note
+    zh_CN: 思源笔记
   index: null
   port_map: '6806'
-  version: v3.0.1
+  version: 3.6.5

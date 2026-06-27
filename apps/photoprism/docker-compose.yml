@@ -5,7 +5,7 @@ services:
       PHOTOPRISM_ADMIN_PASSWORD: casaos
       PHOTOPRISM_UPLOAD_NSFW: 'true'
       TZ: $TZ
-    image: photoprism/photoprism:250228
+    image: photoprism/photoprism:260523
     deploy:
       resources:
         reservations:
@@ -25,9 +25,11 @@ services:
       target: /photoprism/originals
     container_name: photoprism
 x-casaos:
+  app_id: org.icewhale.photoprism
   main: photoprism
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/photoprism/assets/icon.svg
-  title: PhotoPrism
+  title:
+    en_US: PhotoPrism
   index: /
   port_map: '2342'
-  version: '250228'
+  version: 260523.0.0

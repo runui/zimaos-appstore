@@ -1,7 +1,7 @@
 name: cloudflared
 services:
   cloudflared:
-    image: wisdomsky/cloudflared-web:2025.2.1
+    image: wisdomsky/cloudflared-web:2026.5.0
     restart: unless-stopped
     network_mode: host
     ports:
@@ -14,8 +14,10 @@ services:
       target: /config
     container_name: cloudflared
 x-casaos:
+  app_id: org.icewhale.cloudflared
   main: cloudflared
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/cloudflared/assets/icon.svg
-  title: Cloudflared
+  title:
+    en_US: Cloudflared
   port_map: '14333'
-  version: 2025.2.1
+  version: 2026.5.0

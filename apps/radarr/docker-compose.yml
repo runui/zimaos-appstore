@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: linuxserver/radarr:5.26.2
+    image: linuxserver/radarr:6.1.1
     deploy:
       resources:
         reservations:
@@ -28,9 +28,11 @@ services:
       target: /downloads
     container_name: radarr
 x-casaos:
+  app_id: org.icewhale.radarr
   main: radarr
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/radarr/assets/icon.svg
-  title: Radarr
+  title:
+    en_US: Radarr
   index: /
   port_map: '7878'
   version: 6.1.1

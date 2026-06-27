@@ -19,15 +19,18 @@
   ],
   "tagline": "A web app to listen Youtube audio source.",
   "thumbnail": "/apps/holoplay/assets/thumbnail.webp",
-  "updateAt": "2025-03-18",
-  "releaseNotes": "",
+  "update_at": "2024-07-22",
+  "release_notes": "",
   "website": "",
   "repo": "https://github.com/stephane-r/HoloPlay",
   "support": "https://github.com/stephane-r/HoloPlay/issues",
   "docs": "https://github.com/stephane-r/HoloPlay#readme",
   "title": "HoloPlay",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.holoplay",
   "categories": [
     "media"
-  ]
+  ],
+  "min_memory": 0,
+  "min_image_size": 23196904
 }

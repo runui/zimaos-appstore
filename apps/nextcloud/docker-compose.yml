@@ -1,7 +1,7 @@
 name: nextcloud
 services:
   nextcloud:
-    image: nextcloud:32.0
+    image: nextcloud:33.0.3
     deploy:
       resources:
         reservations:
@@ -21,9 +21,11 @@ services:
       target: /var/www/html
     container_name: nextcloud
 x-casaos:
+  app_id: org.icewhale.nextcloud
   main: nextcloud
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/nextcloud/assets/icon.svg
-  title: Nextcloud
+  title:
+    en_US: Nextcloud
   index: /
   port_map: '10081'
-  version: '32.0'
+  version: 33.0.3

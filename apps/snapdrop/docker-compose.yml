@@ -22,9 +22,11 @@ services:
     privileged: false
     container_name: snapdrop
 x-casaos:
+  app_id: org.icewhale.snapdrop
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/snapdrop/assets/icon.svg
   index: /
   port_map: '89'
   scheme: http
-  title: snapdrop
-  version: version-eac78009
+  title:
+    en_US: snapdrop
+  version: 0.0.0-version-eac78009

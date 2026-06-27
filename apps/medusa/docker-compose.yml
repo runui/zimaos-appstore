@@ -27,10 +27,12 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
+  app_id: org.icewhale.medusa
   main: medusa
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/medusa/assets/icon.svg
   index: /
   port_map: '8081'
   scheme: http
-  title: Medusa
-  version: master
+  title:
+    en_US: Medusa
+  version: 1.0.25

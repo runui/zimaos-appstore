@@ -1,7 +1,7 @@
 name: flowise
 services:
   flowise:
-    image: flowiseai/flowise:3.0.11
+    image: flowiseai/flowise:3.1.2
     container_name: flowise
     restart: unless-stopped
     deploy:
@@ -23,10 +23,12 @@ services:
     - /DATA/AppData/$AppID:/root/.flowise
     entrypoint: /bin/sh -c "sleep 3; flowise start"
 x-casaos:
+  app_id: org.icewhale.flowise
   main: flowise
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/flowise/assets/icon.svg
-  title: Flowise
+  title:
+    en_US: Flowise
   port_map: '3025'
   scheme: http
   index: /
-  version: 3.0.11
+  version: 3.1.2

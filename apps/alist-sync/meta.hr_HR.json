@@ -1,4 +1,5 @@
 {
   "id": "alist-sync",
-  "releaseNotes": "- v1.1.5 ispravlja grešku kada je regularni izraz prazan."
+  "app_id": "org.icewhale.alistsync",
+  "release_notes": "- v1.1.5 ispravlja grešku kada je regularni izraz prazan."
 }

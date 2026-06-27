@@ -17,15 +17,18 @@
     "before_install": "Default password for admin background `firefly`, you can modify it in environment variables.",
     "custom": ""
   },
-  "updateAt": "2024-06-11",
-  "releaseNotes": "",
+  "update_at": "2025-02-21",
+  "release_notes": "",
   "website": "https://qq.uusec.com/",
   "repo": "https://github.com/Safe3/firefly",
   "support": "https://github.com/Safe3/firefly/issues",
   "docs": "https://github.com/Safe3/firefly#readme",
   "title": "Firefly",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.firefly",
   "categories": [
     "networking"
-  ]
+  ],
+  "min_memory": 33554432,
+  "min_image_size": 9605592
 }

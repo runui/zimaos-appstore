@@ -1,7 +1,7 @@
 name: ztnet
 services:
   ztnet:
-    image: sinamics/ztnet:0.7.5
+    image: sinamics/ztnet:0.7.18
     container_name: ztnet
     deploy:
       resources:
@@ -53,10 +53,12 @@ networks:
       config:
       - subnet: 172.31.255.0/29
 x-casaos:
+  app_id: org.icewhale.ztnet
   main: ztnet
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/ztnet/assets/icon.svg
   scheme: http
   port_map: '3050'
   index: /
-  title: ZTnet
-  version: 0.7.5
+  title:
+    en_US: ZTnet
+  version: 0.7.18

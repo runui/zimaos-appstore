@@ -32,9 +32,11 @@ services:
       target: /data/nes/roms
     container_name: emulatorjs
 x-casaos:
+  app_id: org.icewhale.emulatorjs
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/emulatorjs/assets/icon.svg
   index: /
   port_map: '88'
   scheme: http
-  title: emulatorjs
+  title:
+    en_US: emulatorjs
   version: 1.9.2

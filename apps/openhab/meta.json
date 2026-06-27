@@ -17,15 +17,18 @@
   "tagline": "Empowering the smart home",
   "thumbnail": "/apps/openhab/assets/thumbnail.webp",
   "tips": {},
-  "updateAt": "2025-02-20",
-  "releaseNotes": "- 4.3.3 is a patch release with add-on bug fixes and enhancements.\n- Fixes include basicprofiles delta handling, bluetooth.bluez NullPointerException, easee API limit configuration, ecobee vacation holds, Free@home missing IDs, hdpowerview bridge labels, Hue dynamics support, and huesync API token handling.\n- Energidataservice tariff filters and several other add-ons were updated.",
+  "update_at": "2026-04-14",
+  "release_notes": "- openHAB 5.1.4 is a patch release with add-on bug fixes across ahawastecollection, airparif, dirigera, ecoflow, electroluxappliance, enocean, evohome, heos, matter, roborock, solaredge, unifi, vesync, and others.\n- JavaScript scripting upgrades to openhab-js 5.17.1 and fixes line-number reporting in injected stack traces.\n- Main UI fixes cover widget editor screen values, item back navigation, page duplication, chart period adjustments, variable handling, map dark-mode updates, gauge sizing, wrappers, and Analyzer axis settings.",
   "website": "https://www.openhab.org",
   "repo": "https://github.com/openhab/openhab-distro",
   "support": "https://community.openhab.org",
   "docs": "https://www.openhab.org/docs/",
   "title": "OpenHAB",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.openhab",
   "categories": [
     "home"
-  ]
+  ],
+  "min_memory": 67108864,
+  "min_image_size": 350366129
 }

@@ -49,7 +49,7 @@ services:
       timeout: 5s
       retries: 10
   whishper:
-    image: pluja/whishper:v3.1.4
+    image: ghcr.io/runui/whishper-video:723b987
     container_name: whishper
     restart: unless-stopped
     depends_on:
@@ -85,10 +85,13 @@ services:
       DB_USER: whishper
       DB_PASS: whishper
 x-casaos:
+  app_id: org.icewhale.whishper
   main: whishper
   index: /
   port_map: '18082'
   scheme: http
-  title: Whishper
+  title:
+    en_US: Whishper
+    zh_CN: Whishper
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/whishper/assets/icon.svg
   version: 3.1.4

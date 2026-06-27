@@ -16,15 +16,18 @@
   ],
   "tagline": "A GTK Broadway web UI for libvirt and virt-manager.",
   "store_app_id": "virtmanager",
-  "updateAt": "2024-05-28",
-  "releaseNotes": "",
+  "update_at": "2023-02-01",
+  "release_notes": "",
   "website": "https://virt-manager.org",
   "repo": "https://github.com/m-bers/docker-virt-manager",
   "support": "https://github.com/m-bers/docker-virt-manager/issues",
   "docs": "https://github.com/m-bers/docker-virt-manager#readme",
   "title": "Virtual Machine Manager",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.virtmanager",
   "categories": [
     "developer"
-  ]
+  ],
+  "min_memory": 0,
+  "min_image_size": 0
 }

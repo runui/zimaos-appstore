@@ -1,6 +1,7 @@
 {
   "id": "wg-easy",
-  "description": "Вы нашли самый простой способ установки и управления WireGuard на любом Linux-хосте!",
-  "releaseNotes": "- v13.0.0 представляет новую структуру h3.\n- Добавлен UI_CHART_TYPE и исправлены ошибки.",
-  "tagline": "WEB-интерфейс для управления WireGuard VPN."
+  "app_id": "org.icewhale.wgeasy",
+  "tagline": "WEB-интерфейс для управления WireGuard VPN.",
+  "release_notes": "- v13.0.0 представляет новую структуру h3.\n- Добавлен UI_CHART_TYPE и исправлены ошибки.",
+  "description": "Вы нашли самый простой способ установки и управления WireGuard на любом Linux-хосте!"
 }

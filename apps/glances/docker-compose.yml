@@ -2,7 +2,7 @@ name: glances
 services:
   glances:
     container_name: glances
-    image: nicolargo/glances:4.4.1
+    image: nicolargo/glances:4.5.4
     pid: host
     deploy:
       resources:
@@ -28,9 +28,13 @@ services:
       published: '61209'
       protocol: tcp
 x-casaos:
+  app_id: org.icewhale.glances
   main: glances
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/glances/assets/icon.svg
-  title: Glances
+  title:
+    en_US: Glances
+    zh_CN: Glances
+    pt_BR: Glances
   index: /
   port_map: '61208'
-  version: 4.4.1
+  version: 4.5.4

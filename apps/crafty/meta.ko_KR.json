@@ -1,4 +1,5 @@
 {
   "id": "crafty",
-  "releaseNotes": "- Crafty 4.4.11은 업스트림 GitLab 프로젝트에서 구성된 이미지 릴리스입니다.\n- Crafty는 GitLab에서 릴리스를 게시하므로 이 앱에는 GitHub changelog가 없습니다."
+  "app_id": "org.icewhale.crafty",
+  "release_notes": "- v4.10.4 fixes servers with registered webhooks failing to start.\n- This update follows the Crafty v4.10.4 GitLab release."
 }

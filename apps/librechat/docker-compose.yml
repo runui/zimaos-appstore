@@ -7,7 +7,7 @@ services:
     depends_on:
     - librechat-mongodb
     - librechat-rag-api
-    image: ghcr.io/danny-avila/librechat-dev@sha256:694701f882044657fca4a86f5bdec09ec3137f2d750ff510daf79c9c2d31c5dd
+    image: ghcr.io/danny-avila/librechat-dev@sha256:adef403efc0a88379179a302344d1d68dcba54007aacea67db80be8e36d8a9da
     restart: unless-stopped
     extra_hosts:
     - host.docker.internal:host-gateway
@@ -155,9 +155,25 @@ networks:
   librechat-net:
     driver: bridge
 x-casaos:
+  app_id: org.icewhale.librechat
   main: librechat-api
-  title: LibreChat
+  title:
+    de_DE: LibreChat
+    el_GR: LibreChat
+    en_GB: LibreChat
+    en_US: LibreChat
+    fr_FR: LibreChat
+    hr_HR: LibreChat
+    it_IT: LibreChat
+    ja_JP: LibreChat
+    ko_KR: LibreChat
+    nb_NO: LibreChat
+    pt_PT: LibreChat
+    ru_RU: LibreChat
+    sv_SE: LibreChat
+    tr_TR: LibreChat
+    zh_CN: LibreChat
   port_map: '3080'
   scheme: http
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/librechat/assets/icon.svg
-  version: latest
+  version: 0.8.7-rc1

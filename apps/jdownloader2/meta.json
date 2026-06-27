@@ -13,15 +13,18 @@
   "author": "Fabio Tea",
   "category": "Media",
   "store_app_id": "jdownloader2",
-  "updateAt": "2024-01-25",
-  "releaseNotes": "",
+  "update_at": "2026-03-14",
+  "release_notes": "",
   "website": "",
   "repo": "",
   "support": "https://support.jdownloader.org/",
   "docs": "https://support.jdownloader.org/",
   "title": "JDownloader2",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.jdownloader2",
   "categories": [
     "media"
-  ]
+  ],
+  "min_memory": 0,
+  "min_image_size": 197063566
 }

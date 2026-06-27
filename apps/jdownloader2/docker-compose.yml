@@ -30,9 +30,11 @@ services:
       target: /output
     container_name: jdownloader2
 x-casaos:
+  app_id: org.icewhale.jdownloader2
   main: jdownloader2
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/jdownloader2/assets/icon.svg
   port_map: '5800'
   scheme: http
-  title: JDownloader2
-  version: latest
+  title:
+    en_US: JDownloader2
+  version: 26.3.1

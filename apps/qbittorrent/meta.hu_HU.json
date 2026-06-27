@@ -1,5 +1,6 @@
 {
   "id": "qbittorrent",
-  "description": "A qBittorrent projekt célja, hogy nyílt forráskódú szoftver alternatívát nyújtson a µTorrent számára.",
-  "tagline": "Ingyenes BitTorrent letöltő"
+  "app_id": "org.icewhale.qbittorrent",
+  "tagline": "Ingyenes BitTorrent letöltő",
+  "description": "A qBittorrent projekt célja, hogy nyílt forráskódú szoftver alternatívát nyújtson a µTorrent számára."
 }

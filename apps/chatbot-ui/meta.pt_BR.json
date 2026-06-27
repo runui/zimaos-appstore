@@ -1,5 +1,6 @@
 {
   "id": "chatbot-ui",
-  "description": "Chatbot UI é uma interface de chat de código aberto para modelos de IA.",
-  "tagline": "Interface de chat de código aberto para modelos de IA"
+  "app_id": "org.icewhale.chatbotui",
+  "tagline": "Interface de chat de código aberto para modelos de IA",
+  "description": "Chatbot UI é uma interface de chat de código aberto para modelos de IA."
 }

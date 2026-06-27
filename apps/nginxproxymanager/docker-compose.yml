@@ -27,9 +27,12 @@ services:
       target: /etc/letsencrypt
     container_name: nginxproxymanager
 x-casaos:
+  app_id: org.icewhale.nginxproxymanager
   main: nginxproxymanager
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/nginxproxymanager/assets/icon.svg
-  title: Nginx Proxy Manager
+  title:
+    en_US: Nginx Proxy Manager
+    zh_CN: Nginx 代理管理器
   index: /
   port_map: '81'
   version: 2.13.5

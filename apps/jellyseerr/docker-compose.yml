@@ -27,8 +27,10 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
+  app_id: org.icewhale.jellyseerr
   scheme: http
-  title: Jellyseerr
+  title:
+    en_US: Jellyseerr
   main: jellyseerr
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/jellyseerr/assets/icon.svg
   port_map: '5055'

@@ -49,10 +49,12 @@ services:
       retries: 3
       start_period: 30s
 x-casaos:
+  app_id: org.icewhale.etherpad
   main: etherpad
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/etherpad/assets/icon.svg
   scheme: http
   port_map: '9001'
   index: /
-  title: Etherpad
+  title:
+    en_US: Etherpad
   version: 3.1.0

@@ -1,5 +1,6 @@
 {
   "id": "resilio-sync",
-  "description": "resilio-sync är en Docker-baserad applikation som möjliggör snabb och säker filsynkronisering och delning.",
-  "tagline": "Frigör kraften i sömlös filsynkronisering."
+  "app_id": "org.icewhale.resiliosync",
+  "tagline": "Frigör kraften i sömlös filsynkronisering.",
+  "description": "resilio-sync är en Docker-baserad applikation som möjliggör snabb och säker filsynkronisering och delning."
 }

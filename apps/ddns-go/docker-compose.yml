@@ -1,7 +1,7 @@
 name: ddns-go
 services:
   ddns-go:
-    image: jeessy/ddns-go:v6.13.2
+    image: jeessy/ddns-go:v6.17.1
     network_mode: bridge
     deploy:
       resources:
@@ -18,9 +18,11 @@ services:
       protocol: tcp
     container_name: ddns-go
 x-casaos:
+  app_id: org.icewhale.ddnsgo
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/ddns-go/assets/icon.svg
   main: ddns-go
   port_map: '9876'
   scheme: http
-  title: ddns-go
-  version: v6.17.0
+  title:
+    en_US: ddns-go
+  version: 6.17.1

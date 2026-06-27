@@ -28,8 +28,10 @@ services:
       target: /downloads
     container_name: lidarr
 x-casaos:
+  app_id: org.icewhale.lidarr
   main: lidarr
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/lidarr/assets/icon.svg
-  title: Lidarr
+  title:
+    en_US: Lidarr
   port_map: '8686'
   version: 3.1.0

@@ -12,15 +12,18 @@
   "category": "Productivity",
   "hostname": "",
   "store_app_id": "resilio-sync",
-  "updateAt": "2024-06-14",
-  "releaseNotes": "",
+  "update_at": "2026-05-19",
+  "release_notes": "Docker image 3.1.2 updates the LinuxServer Resilio Sync image to Resilio Sync 3.1.2.1076-1.",
   "website": "https://www.resilio.com/sync/",
   "repo": "https://github.com/linuxserver/docker-resilio-sync",
   "support": "https://github.com/linuxserver/docker-resilio-sync/issues",
   "docs": "https://docs.linuxserver.io/images/docker-resilio-sync/",
   "title": "resilio-sync",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.resiliosync",
   "categories": [
     "productivity"
-  ]
+  ],
+  "min_memory": 0,
+  "min_image_size": 0
 }

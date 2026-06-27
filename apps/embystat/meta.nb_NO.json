@@ -1,4 +1,5 @@
 {
   "id": "embystat",
-  "releaseNotes": "- Det konfigurerte EmbyStat 0.2.0-bildet tilordnes ikke en non-prerelease GitHub Release-oppføring i mregni/EmbyStat.\n- Hold utgivelsesnotater bundet til denne bildekoden til oppstrøms publiserer en samsvarende stabil endringslogg."
+  "app_id": "org.icewhale.embystat",
+  "release_notes": "- Det konfigurerte EmbyStat 0.2.0-bildet tilordnes ikke en non-prerelease GitHub Release-oppføring i mregni/EmbyStat.\n- Hold utgivelsesnotater bundet til denne bildekoden til oppstrøms publiserer en samsvarende stabil endringslogg."
 }

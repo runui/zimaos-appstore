@@ -17,7 +17,7 @@ services:
     networks:
     - dify
   api:
-    image: langgenius/dify-api:0.12.1
+    image: langgenius/dify-api:0.15.8
     container_name: dify-api
     restart: unless-stopped
     environment:
@@ -70,7 +70,7 @@ services:
     - ssrf_proxy_network
     - dify
   worker:
-    image: langgenius/dify-api:0.12.1
+    image: langgenius/dify-api:0.15.8
     container_name: dify-worker
     restart: unless-stopped
     environment:
@@ -102,7 +102,7 @@ services:
     - ssrf_proxy_network
     - dify
   web:
-    image: langgenius/dify-web:0.12.1
+    image: langgenius/dify-web:0.15.8
     container_name: dify-web
     restart: unless-stopped
     environment:
@@ -173,7 +173,7 @@ services:
     networks:
     - dify
   sandbox:
-    image: langgenius/dify-sandbox:0.2.10
+    image: langgenius/dify-sandbox:0.2.11
     container_name: dify-sandbox
     restart: unless-stopped
     environment:
@@ -208,7 +208,7 @@ services:
     depends_on:
     - config
   nginx:
-    image: nginx@sha256:42f2d24ae18df9b5251d1cc45548085656d2335e9338fd150a24e415462d151f
+    image: nginx@sha256:ec4ed8b5299e5e90694af7750eb6dffd2627317d30544d056b0371f8082f7bce
     container_name: dify-nginx
     restart: unless-stopped
     volumes:
@@ -228,9 +228,11 @@ networks:
   dify:
     name: dify
 x-casaos:
+  app_id: org.icewhale.dify
   main: web
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/dify/assets/icon.svg
-  title: Dify
+  title:
+    en_US: Dify
   index: /
   port_map: '3701'
-  version: 0.12.1
+  version: 0.15.8

@@ -1,7 +1,7 @@
 name: ollama
 services:
   ollama:
-    image: ollama/ollama:0.9.5
+    image: ollama/ollama:0.24.0
     container_name: ollama
     deploy:
       resources:
@@ -19,10 +19,12 @@ services:
       source: /DATA/AppData/$AppID/
       target: /root/.ollama
 x-casaos:
+  app_id: org.icewhale.ollama
   main: ollama
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/ollama/assets/icon.svg
   scheme: http
   port_map: '11434'
   index: /
-  title: Ollama
-  version: 0.9.5
+  title:
+    en_US: Ollama
+  version: 0.24.0

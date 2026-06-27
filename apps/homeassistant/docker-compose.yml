@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: homeassistant/home-assistant:2025.11
+    image: homeassistant/home-assistant:2026.5.4
     deploy:
       resources:
         reservations:
@@ -27,9 +27,11 @@ services:
     privileged: true
     container_name: homeassistant
 x-casaos:
+  app_id: org.icewhale.homeassistant
   main: homeassistant
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/homeassistant/assets/icon.svg
-  title: Home Assistant
+  title:
+    en_US: Home Assistant
   index: /
   port_map: '8123'
-  version: '2025.11'
+  version: 2026.5.4

@@ -10,7 +10,7 @@ services:
       LOG_EVENTS: true
     command: []
     container_name: albyhub
-    image: ghcr.io/getalby/hub:v1.20.0
+    image: ghcr.io/getalby/hub:v1.22.2
     deploy:
       resources:
         reservations:
@@ -28,9 +28,11 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
+  app_id: org.icewhale.albyhub
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/albyhub/assets/icon.svg
   index: /
   port_map: '58000'
   scheme: http
-  title: Alby Hub ✨
-  version: v1.20.0
+  title:
+    en_US: Alby Hub ✨
+  version: 1.22.2

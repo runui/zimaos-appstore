@@ -1,4 +1,5 @@
 {
   "id": "gateway-go",
-  "releaseNotes": "- v2.0.11 inkluderer OpenWrt-related endringer.\n- Panikkgjenoppretting og tjenesteregistreringshåndtering ble oppdatert.\n- README-dokumentasjonen ble oppdatert."
+  "app_id": "org.icewhale.gatewaygo",
+  "release_notes": "- v2.0.12 adds Docker service handling.\n- System status reporting now includes status information.\n- README documentation was refreshed."
 }

@@ -18,9 +18,11 @@ services:
       target: /opt/alist/data
     container_name: alist
 x-casaos:
+  app_id: org.icewhale.alist
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/alist/assets/icon.svg
   main: alist
   port_map: '5244'
   scheme: http
-  title: Alist
-  version: v3.40.0
+  title:
+    en_US: Alist
+  version: 3.40.0

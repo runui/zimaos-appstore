@@ -16,14 +16,20 @@
     "arm64"
   ],
   "updateAt": "2026-06-07",
-  "releaseNotes": "Initial ZimaOS AppStore packaging for Subgen CPU edition.",
+  "releaseNotes": {
+    "en_US": "Initial ZimaOS AppStore packaging for Subgen CPU edition.",
+    "zh_CN": "首次将 Subgen CPU 版本打包为 ZimaOS 应用。"
+  },
   "website": "https://github.com/McCloudS/subgen",
   "repo": "https://github.com/McCloudS/subgen",
   "support": "https://github.com/McCloudS/subgen/issues",
   "docs": "https://github.com/McCloudS/subgen#readme",
   "title": "Subgen",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.subgen",
   "categories": [
     "ai"
-  ]
+  ],
+  "min_memory": 0,
+  "min_image_size": 0
 }

@@ -14,9 +14,11 @@ services:
     restart: always
     container_name: openspeedtest
 x-casaos:
+  app_id: org.icewhale.openspeedtest
   main: openspeedtest
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/openspeedtest/assets/icon.svg
-  title: OpenSpeedTest
+  title:
+    en_US: OpenSpeedTest
   index: /
   port_map: '3004'
-  version: v2.0.6
+  version: 2.0.6

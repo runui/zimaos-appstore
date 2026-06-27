@@ -1,4 +1,5 @@
 {
   "id": "adminer",
-  "releaseNotes": "- v5.4.1 popravlja uklanjanje veze primarnih ključeva NULL s naredbom SQL.\n- CSV izvoz više ne navodi nulte vrijednosti, a uvoz upozorava kada se prekorači upload_max_filesize.\n- Spremljeni upiti naredbi SQL mogu se produžiti na URL, a prikaz definicije rutine MySQL je popravljen."
+  "app_id": "org.icewhale.adminer",
+  "release_notes": "- v5.4.2 avoids a denial-of-service issue in the version check.\n- It improves JSON display, generated values, exports, database support, and plugins."
 }

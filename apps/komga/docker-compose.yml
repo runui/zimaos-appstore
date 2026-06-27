@@ -1,7 +1,7 @@
 name: komga
 services:
   komga:
-    image: gotson/komga:1.23.6
+    image: gotson/komga:1.24.4
     container_name: komga
     deploy:
       resources:
@@ -27,10 +27,12 @@ services:
       PGID: '1000'
       PUID: '1000'
 x-casaos:
+  app_id: org.icewhale.komga
   main: komga
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/komga/assets/icon.svg
   scheme: http
   port_map: '25600'
   index: /
-  title: Komga
-  version: 1.23.6
+  title:
+    en_US: Komga
+  version: 1.24.4

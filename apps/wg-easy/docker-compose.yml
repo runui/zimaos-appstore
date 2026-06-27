@@ -28,8 +28,10 @@ services:
     - net.ipv4.conf.all.src_valid_mark=1
     container_name: wg-easy
 x-casaos:
+  app_id: org.icewhale.wgeasy
   main: wg-easy
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/wg-easy/assets/icon.svg
-  title: WireGuard Easy
+  title:
+    en_US: WireGuard Easy
   port_map: '51821'
-  version: '13'
+  version: 13.0.0

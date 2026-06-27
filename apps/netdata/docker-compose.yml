@@ -10,7 +10,7 @@ services:
       resources:
         limits:
           memory: 1794M
-    image: netdata/netdata:v2.8.1
+    image: netdata/netdata:v2.10.3
     pid: host
     ports:
     - target: 19999
@@ -50,9 +50,11 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
+  app_id: org.icewhale.netdata
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/netdata/assets/icon.svg
   index: /
   port_map: '19999'
   scheme: http
-  title: Netdata
-  version: v2.8.1
+  title:
+    en_US: Netdata
+  version: 2.10.3

@@ -1,7 +1,7 @@
 name: handbrake
 services:
   handbrake:
-    image: jlesage/handbrake:v25.10.1
+    image: jlesage/handbrake:v26.03.3
     network_mode: bridge
     ports:
     - target: 5800
@@ -24,9 +24,11 @@ services:
       target: /config
     container_name: handbrake
 x-casaos:
+  app_id: org.icewhale.handbrake
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/handbrake/assets/icon.svg
   index: /
   port_map: '5800'
   scheme: http
-  title: handbrake
-  version: v25.10.1
+  title:
+    en_US: handbrake
+  version: 26.3.3

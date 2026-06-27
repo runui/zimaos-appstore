@@ -1,6 +1,7 @@
 {
   "id": "tautulli",
-  "description": "Tautulli är en tredjepartsapplikation som du kan köra bredvid din Plex Media Server för att övervaka aktiviteten och spåra olika statistik.",
-  "releaseNotes": "- v2.13.2 lägger till quarter-value-ikoner för historikbevakningsstatus.\n- En samtidig graf för strömmar per dag och fält för export av metadatakataloger lades till.\n- Aviserings- och nyhetsbrevsagentlistor visar nu den senaste utlösta tiden, och X-Plex-Language kan åsidosättas i konfigurationen.",
-  "tagline": "Övervaka din Plex Media Server och mycket mer."
+  "app_id": "org.icewhale.tautulli",
+  "tagline": "Övervaka din Plex Media Server och mycket mer.",
+  "release_notes": "- Tautulli 2.17.1 fixes Tautulli Remote App notification sending and folder path browsing errors.\n- Fixes CVE-2026-41065 in newsletter custom template directory handling.\n- Adds Simkl URL notification parameters and AV1 and Opus media flag images.",
+  "description": "Tautulli är en tredjepartsapplikation som du kan köra bredvid din Plex Media Server för att övervaka aktiviteten och spåra olika statistik."
 }

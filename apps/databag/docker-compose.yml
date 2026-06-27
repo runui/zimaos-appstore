@@ -13,8 +13,10 @@ services:
       target: /var/lib/databag
     container_name: databag
 x-casaos:
+  app_id: org.icewhale.databag
   main: databag
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/databag/assets/icon.svg
-  title: Databag
+  title:
+    en_US: Databag
   port_map: '7000'
   version: 0.1.18

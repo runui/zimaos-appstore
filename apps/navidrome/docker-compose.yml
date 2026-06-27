@@ -6,7 +6,7 @@ services:
       resources:
         reservations:
           memory: 1024M
-    image: deluan/navidrome:0.58.5
+    image: deluan/navidrome:0.61.2
     restart: unless-stopped
     ports:
     - target: 4533
@@ -28,10 +28,12 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
+  app_id: org.icewhale.navidrome
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/navidrome/assets/icon.svg
   index: /
   main: navidrome
   port_map: '4533'
   scheme: http
-  title: Navidrome
-  version: 0.58.5
+  title:
+    en_US: Navidrome
+  version: 0.61.2

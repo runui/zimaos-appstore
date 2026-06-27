@@ -22,7 +22,9 @@ services:
       target: /config
     container_name: mariadb
 x-casaos:
+  app_id: org.icewhale.mariadb
   main: mariadb
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/mariadb/assets/icon.svg
-  title: MariaDB
+  title:
+    en_US: MariaDB
   version: 11.4.8

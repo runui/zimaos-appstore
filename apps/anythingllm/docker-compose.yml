@@ -14,14 +14,21 @@ services:
     - type: bind
       source: /DATA/AppData/anythingllm/storage
       target: /app/server/storage
+    environment:
+    - STORAGE_DIR=/app/server/storage
     restart: always
     extra_hosts:
     - host.docker.internal:host-gateway
 x-casaos:
+  app_id: org.icewhale.anythingllm
   main: anythingllm
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/anythingllm/assets/icon.svg
   scheme: http
-  title: AnythingLLM
+  title:
+    en_US: AnythingLLM
+    en_UK: AnythingLLM
+    zh_CN: AnythingLLM
+    ja_JP: AnythingLLM
   index: /
   port_map: '3051'
-  version: latest
+  version: 1.14.2

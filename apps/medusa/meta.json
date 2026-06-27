@@ -17,15 +17,18 @@
     "/apps/medusa/assets/screenshot-6.webp"
   ],
   "store_app_id": "medusa",
-  "updateAt": "2024-03-26",
-  "releaseNotes": "",
+  "update_at": "2026-05-17",
+  "release_notes": "",
   "website": "",
   "repo": "https://github.com/pymedusa/Medusa",
   "support": "https://github.com/pymedusa/Medusa/issues",
   "docs": "https://github.com/pymedusa/Medusa/wiki",
   "title": "Medusa",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.medusa",
   "categories": [
     "media"
-  ]
+  ],
+  "min_memory": 0,
+  "min_image_size": 96874055
 }

@@ -15,15 +15,21 @@
     "amd64",
     "arm64"
   ],
-  "updateAt": "2026-06-10",
-  "releaseNotes": "Initial ZimaOS AppStore packaging for Whishper CPU edition.",
+  "updateAt": "2026-06-28",
+  "releaseNotes": {
+    "en_US": "Switch to RunUI whishper-video image at commit 723b987 (v3.1.4+) with amd64/arm64 support.",
+    "zh_CN": "切换到 RunUI whishper-video 镜像 723b987 (v3.1.4+)，支持 amd64/arm64 架构。"
+  },
   "website": "https://whishper-docs.pages.dev/",
   "repo": "https://github.com/pluja/whishper",
   "support": "https://github.com/pluja/whishper/issues",
   "docs": "https://whishper-docs.pages.dev/guides/install",
   "title": "Whishper",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.whishper",
   "categories": [
     "ai"
-  ]
+  ],
+  "min_memory": 0,
+  "min_image_size": 1085519611
 }

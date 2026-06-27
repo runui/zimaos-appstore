@@ -23,7 +23,23 @@ services:
     tty: true
     restart: unless-stopped
 x-casaos:
-  title: CopyParty
+  app_id: org.icewhale.copyparty
+  title:
+    de_DE: CopyParty
+    el_GR: CopyParty
+    en_GB: CopyParty
+    en_US: CopyParty
+    fr_FR: CopyParty
+    hr_HR: CopyParty
+    it_IT: CopyParty
+    ja_JP: CopyParty
+    ko_KR: CopyParty
+    nb_NO: CopyParty
+    pt_PT: CopyParty
+    ru_RU: CopyParty
+    sv_SE: CopyParty
+    tr_TR: CopyParty
+    zh_CN: CopyParty
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/copyparty/assets/icon.svg
   index: /
   main: copyparty

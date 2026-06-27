@@ -13,17 +13,20 @@
   ],
   "developer": "Petio Team",
   "author": "WisdomSky",
-  "thumbnail": "/apps/petio/assets/icon.svg",
+  "thumbnail": "",
   "category": "Media",
-  "updateAt": "2023-07-26",
-  "releaseNotes": "",
+  "update_at": "2022-01-13",
+  "release_notes": "",
   "website": "https://petio.tv",
   "repo": "https://github.com/petio-team/petio",
   "support": "https://github.com/petio-team/petio/issues",
   "docs": "https://docs.petio.tv",
   "title": "Petio",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.petio",
   "categories": [
     "media"
-  ]
+  ],
+  "min_memory": 0,
+  "min_image_size": 206810765
 }

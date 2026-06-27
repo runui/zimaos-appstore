@@ -22,8 +22,10 @@ services:
       target: /config
     container_name: embystat
 x-casaos:
+  app_id: org.icewhale.embystat
   main: embystat
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/embystat/assets/icon.svg
-  title: Embystat
+  title:
+    en_US: Embystat
   port_map: '6555'
   version: 0.2.0

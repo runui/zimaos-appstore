@@ -24,7 +24,9 @@ services:
       target: /var/lib/postgresql/data
     container_name: postgresql
 x-casaos:
+  app_id: org.icewhale.postgresql
   main: postgresql
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/postgresql/assets/icon.svg
-  title: PostgreSQL
-  version: '17.4'
+  title:
+    en_US: PostgreSQL
+  version: 17.4.0

@@ -65,7 +65,10 @@ networks:
   blinko-net:
     driver: bridge
 x-casaos:
-  title: Blinko
+  app_id: org.icewhale.blinko
+  title:
+    en_GB: Blinko
+    en_US: Blinko
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/blinko/assets/icon.svg
   main: blinko
   port_map: '1111'

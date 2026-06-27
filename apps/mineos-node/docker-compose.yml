@@ -24,9 +24,12 @@ volumes:
 networks:
   mineos: null
 x-casaos:
+  app_id: org.icewhale.mineosnode
   main: mineos
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/mineos-node/assets/icon.svg
-  title: MineOS
+  title:
+    en_US: MineOS
   index: /admin/index.html
   scheme: https
   port_map: '8444'
+  version: 1.2.2

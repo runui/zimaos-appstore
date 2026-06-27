@@ -28,8 +28,10 @@ services:
       target: /downloads
     container_name: readarr
 x-casaos:
+  app_id: org.icewhale.readarr
   main: readarr
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/readarr/assets/icon.svg
-  title: Readarr
+  title:
+    en_US: Readarr
   port_map: '8787'
   version: 0.3.10-develop

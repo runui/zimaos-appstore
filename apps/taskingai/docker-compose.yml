@@ -181,7 +181,10 @@ configs:
       \ /imgs/ {\n      proxy_pass http://backend-web:8000;\n  }\n\n  location / {\n\
       \      proxy_pass http://frontend:80;\n  }\n}\n"
 x-casaos:
+  app_id: org.icewhale.taskingai
   main: frontend
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/taskingai/assets/icon.svg
-  title: TaskingAI
+  title:
+    en_US: TaskingAI
   port_map: '3080'
+  version: 0.3.0

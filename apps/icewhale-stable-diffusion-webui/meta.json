@@ -12,15 +12,18 @@
   ],
   "tagline": "An AI model used to generate images conditioned on text descriptions.",
   "store_app_id": "icewhale-stable-diffusion-webui",
-  "updateAt": "2024-03-11",
-  "releaseNotes": "",
+  "update_at": "2024-01-11",
+  "release_notes": "",
   "website": "",
   "repo": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
   "support": "https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues",
   "docs": "https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki",
   "title": "Stable Diffusion",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.icewhalestablediffusionwebui",
   "categories": [
     "ai"
-  ]
+  ],
+  "min_memory": 536870912,
+  "min_image_size": 0
 }

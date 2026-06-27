@@ -6,7 +6,7 @@ services:
       resources:
         reservations:
           memory: 512M
-    image: ghcr.io/esphome/esphome:2025.11.0
+    image: ghcr.io/esphome/esphome:2026.5.1
     restart: always
     ports:
     - target: 6052
@@ -22,10 +22,12 @@ services:
     network_mode: host
     privileged: false
 x-casaos:
+  app_id: org.icewhale.esphome
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/esphome/assets/icon.svg
   index: /
   main: esphome
   port_map: '6052'
   scheme: http
-  title: ESPHome
-  version: 2025.11.0
+  title:
+    en_US: ESPHome
+  version: 2026.5.1

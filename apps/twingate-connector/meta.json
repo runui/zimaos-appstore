@@ -13,15 +13,18 @@
   "thumbnail": "/apps/twingate-connector/assets/thumbnail.webp",
   "tips": {},
   "hostname": "",
-  "updateAt": "2024-01-26",
-  "releaseNotes": "",
+  "update_at": "2026-04-22",
+  "release_notes": "",
   "website": "https://www.twingate.com",
   "repo": "",
   "support": "https://www.twingate.com/support",
   "docs": "https://www.twingate.com/docs/connectors",
   "title": "Twingate",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.twingateconnector",
   "categories": [
     "networking"
-  ]
+  ],
+  "min_memory": 524288000,
+  "min_image_size": 0
 }

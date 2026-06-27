@@ -18,10 +18,12 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
+  app_id: org.icewhale.motioneye
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/motioneye/assets/icon.svg
   index: /
   main: motioneye
   port_map: '8765'
   scheme: http
-  title: Motioneye
-  version: master-amd64
+  title:
+    en_US: Motioneye
+  version: 0.44.0

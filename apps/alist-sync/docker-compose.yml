@@ -13,8 +13,10 @@ services:
     environment:
     - TZ=Asia/Shanghai
 x-casaos:
+  app_id: org.icewhale.alistsync
   main: alist-sync
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/alist-sync/assets/icon.svg
-  title: Alist-Sync
+  title:
+    en_US: Alist-Sync
   port_map: '52441'
   version: 1.1.5

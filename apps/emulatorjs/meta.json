@@ -25,15 +25,18 @@
   "category": "Media",
   "hostname": "",
   "store_app_id": "emulatorjs",
-  "updateAt": "2024-09-12",
-  "releaseNotes": "- Metadata release 1.9.2 adds logos and videos for 3DO, Arcade, MSX, NDS, NGP, PSX, Saturn, and Wonderswan.\n- This entry remains tied to the configured LinuxServer image tag.",
+  "update_at": "2025-06-09",
+  "release_notes": "- Metadata release 1.9.2 adds logos and videos for 3DO, Arcade, MSX, NDS, NGP, PSX, Saturn, and Wonderswan.\n- This entry remains tied to the configured LinuxServer image tag.",
   "website": "https://emulatorjs.org/",
   "repo": "https://github.com/linuxserver/emulatorjs",
   "support": "https://github.com/linuxserver/emulatorjs/issues",
   "docs": "https://docs.linuxserver.io/deprecated_images/docker-emulatorjs/",
   "title": "emulatorjs",
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "app_id": "org.icewhale.emulatorjs",
   "categories": [
     "media"
-  ]
+  ],
+  "min_memory": 0,
+  "min_image_size": 285131697
 }

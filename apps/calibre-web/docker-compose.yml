@@ -26,9 +26,11 @@ services:
       target: /books
     container_name: calibre-web
 x-casaos:
+  app_id: org.icewhale.calibreweb
   main: calibre-web
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/calibre-web/assets/icon.svg
-  title: Calibre-web
+  title:
+    en_US: Calibre-web
   index: /
   port_map: '8083'
   version: 0.6.24

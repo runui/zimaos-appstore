@@ -1,7 +1,7 @@
 name: gateway-go
 services:
   gateway-go:
-    image: openiothub/gateway-go:v2.0.11
+    image: openiothub/gateway-go:v2.0.12
     network_mode: host
     deploy:
       resources:
@@ -18,9 +18,11 @@ services:
       protocol: tcp
     container_name: gateway-go
 x-casaos:
+  app_id: org.icewhale.gatewaygo
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/gateway-go/assets/icon.svg
   main: gateway-go
   port_map: '34323'
   scheme: http
-  title: gateway-go
-  version: v2.0.11
+  title:
+    en_US: gateway-go
+  version: 2.0.12

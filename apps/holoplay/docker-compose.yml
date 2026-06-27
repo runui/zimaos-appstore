@@ -10,9 +10,11 @@ services:
     restart: unless-stopped
     container_name: holoplay
 x-casaos:
+  app_id: org.icewhale.holoplay
   main: holoplay
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/holoplay/assets/icon.svg
-  title: HoloPlay
+  title:
+    en_US: HoloPlay
   index: /
   port_map: '3000'
   version: 1.12.3

@@ -6,7 +6,7 @@ services:
       PGID: '1000'
       PUID: '1000'
       TZ: Europe/London
-    image: linuxserver/ombi:4.47.1
+    image: linuxserver/ombi:4.53.5
     deploy:
       resources:
         reservations:
@@ -23,8 +23,10 @@ services:
       target: /config
     container_name: ombi
 x-casaos:
+  app_id: org.icewhale.ombi
   main: ombi
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/ombi/assets/icon.svg
-  title: Ombi
+  title:
+    en_US: Ombi
   port_map: '3579'
-  version: 4.47.1
+  version: 4.53.5

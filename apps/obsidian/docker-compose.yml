@@ -1,7 +1,7 @@
 name: obsidian
 services:
   obsidian:
-    image: lscr.io/linuxserver/obsidian:1.8.10
+    image: lscr.io/linuxserver/obsidian:1.12.7
     container_name: obsidian
     deploy:
       resources:
@@ -26,10 +26,12 @@ services:
       PGID: 1000
       TZ: $TZ
 x-casaos:
+  app_id: org.icewhale.obsidian
   main: obsidian
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/obsidian/assets/icon.svg
   scheme: https
   port_map: '15324'
   index: /
-  title: Obsidian
-  version: 1.8.10
+  title:
+    en_US: Obsidian
+  version: 1.12.7
