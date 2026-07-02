@@ -1,0 +1,52 @@
+name: subgen
+services:
+  subgen:
+    image: mccloud/subgen:2026.06.3@sha256:1db6be6370b086a1da1b3d1b730a8f9c92c47c1f3b4a9cacee4ffd1b6aaa7a13
+    container_name: subgen
+    restart: unless-stopped
+    tty: true
+    ports:
+    - target: 9000
+      published: '19000'
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: /DATA/AppData/$AppID/models
+      target: /subgen/models
+    - type: bind
+      source: /DATA/Media/TV
+      target: /tv
+    - type: bind
+      source: /DATA/Media/Movies
+      target: /movies
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+      WEBHOOK_PORT: '9000'
+      TRANSCRIBE_DEVICE: cpu
+      WHISPER_MODEL: medium
+      WHISPER_THREADS: '4'
+      CONCURRENT_TRANSCRIPTIONS: '1'
+      MODEL_PATH: /subgen/models
+      PROCESS_ADDED_MEDIA: 'true'
+      PROCESS_MEDIA_ON_PLAY: 'false'
+      SUBTITLE_LANGUAGE_NAME: aa
+      SKIP_IF_INTERNAL_SUBTITLES_LANGUAGE: eng
+      LRC_FOR_AUDIO_FILES: 'true'
+      WORD_LEVEL_HIGHLIGHT: 'false'
+      CLEAR_VRAM_ON_COMPLETE: 'true'
+      APPEND: 'false'
+      DEBUG: 'true'
+      UPDATE: 'false'
+x-casaos:
+  app_id: org.icewhale.subgen
+  main: subgen
+  index: /docs
+  port_map: '19000'
+  scheme: http
+  title:
+    en_US: Subgen
+    zh_CN: Subgen
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.subgen/assets/icon.png
+  version: 2026.06.4

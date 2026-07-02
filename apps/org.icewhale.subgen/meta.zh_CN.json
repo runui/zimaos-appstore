@@ -1,0 +1,9 @@
+{
+  "id": "org.icewhale.subgen",
+  "title": "Subgen",
+  "tagline": "面向媒体服务器的本地 AI 字幕生成工具",
+  "description": "Subgen 使用 faster-whisper 和 stable-ts 将个人音频、视频文件转录为字幕。它可以作为 Bazarr 的 Whisper Provider 使用，也可以接收 Plex、Jellyfin、Emby 或 Tautulli 的 Webhook，提供兼容 OpenAI 的音频转录接口，并可通过 API 文档手动提交任务。\n\n这个 ZimaOS 应用使用 amd64 CPU-only 镜像。Whisper 模型会缓存到 AppData 中，`/tv` 和 `/movies` 挂载可让 Subgen 在 Webhook 或批量任务需要直接访问文件时看到与媒体服务器一致的媒体路径。\n\n**注意事项：**\n- 打开 `/docs` 可访问 FastAPI Swagger 接口。\n- 在 Bazarr 中将 Whisper endpoint 配置为 `http://<zimaos-ip>:19000`。\n- 如果使用 Plex、Jellyfin、Emby 或 Tautulli Webhook，请确保 Subgen 与媒体服务器看到相同的容器媒体路径，或自行调整路径映射变量。\n",
+  "tips": {
+    "before_install": "## 资源和配置提示\n\n- 该应用使用 CPU 运行，低功耗设备上的转录速度可能较慢；如有需要可将 `WHISPER_MODEL` 改为 `small`、`base` 或 `tiny`。\n- 首次转录会将所选 Whisper 模型下载到 `/subgen/models`，可能需要等待一段时间。\n- Subgen 是 API/Webhook 服务，不是带账号系统的完整 Web UI，不建议直接暴露到公网。\n- 当前缩略图和截图使用上游图标作为占位资源，因为上游项目未提供 UI 截图。\n"
+  }
+}

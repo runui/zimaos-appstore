@@ -1,0 +1,31 @@
+name: distribution
+services:
+  distribution:
+    image: distribution/registry:v2.7.0@sha256:5c3c67780f974bd2699a199a7ede968e2bb6e6a074d2d7c55c6f8dfd4fa331dc
+    container_name: distribution
+    environment:
+      OTEL_TRACES_EXPORTER: none
+      REGISTRY_HTTP_ADDR: 0.0.0.0:5000
+      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry
+      REGISTRY_STORAGE_DELETE_ENABLED: 'true'
+    network_mode: bridge
+    ports:
+    - target: 5000
+      published: '5000'
+      protocol: tcp
+    restart: unless-stopped
+    volumes:
+    - type: bind
+      source: /DATA/AppData/$AppID/registry
+      target: /var/lib/registry
+x-casaos:
+  app_id: org.icewhale.distribution
+  main: distribution
+  index: /v2/
+  port_map: '5000'
+  scheme: http
+  title:
+    en_US: Distribution Registry
+    zh_CN: Distribution Registry
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.distribution/assets/icon.svg
+  version: 2.7.0

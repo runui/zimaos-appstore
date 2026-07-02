@@ -1,0 +1,97 @@
+name: whishper
+services:
+  mongo:
+    image: mongo:8.2.2@sha256:c6b62ae11dacc284b4ac99c815b6acf36fbe2691f7e822d4964673767b4b53a2
+    container_name: whishper-mongo
+    restart: unless-stopped
+    volumes:
+    - type: bind
+      source: /DATA/AppData/$AppID/db
+      target: /data/db
+    - type: bind
+      source: /DATA/AppData/$AppID/db-logs
+      target: /var/log/mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: whishper
+      MONGO_INITDB_ROOT_PASSWORD: whishper
+    command:
+    - --logpath
+    - /var/log/mongodb/mongod.log
+    expose:
+    - 27017
+  translate:
+    image: libretranslate/libretranslate:v1.6.5@sha256:f4da42b0b7dae7f1abffaaf40c058fb06d7d9c47805f1a1861bfdfc1e9948bbe
+    container_name: whishper-libretranslate
+    restart: unless-stopped
+    tty: true
+    volumes:
+    - type: bind
+      source: /DATA/AppData/$AppID/libretranslate/data
+      target: /home/libretranslate/.local/share
+    - type: bind
+      source: /DATA/AppData/$AppID/libretranslate/cache
+      target: /home/libretranslate/.local/cache
+    environment:
+      LT_DISABLE_WEB_UI: 'true'
+      LT_LOAD_ONLY: en,zh,es,fr
+      LT_UPDATE_MODELS: 'true'
+    expose:
+    - 5000
+    networks:
+      default:
+        aliases:
+        - translate
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - ./venv/bin/python scripts/healthcheck.py
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  whishper:
+    image: ghcr.io/runui/whishper-video:723b987@sha256:5f0d75fff3a1cfc00e00915814b484ee9de9dee691a7649319e6ad061eaed2ea
+    container_name: whishper
+    restart: unless-stopped
+    depends_on:
+    - mongo
+    - translate
+    networks:
+      default:
+        aliases:
+        - whishper
+    ports:
+    - target: 80
+      published: '18082'
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: /DATA/AppData/$AppID/uploads
+      target: /app/uploads
+    - type: bind
+      source: /DATA/AppData/$AppID/logs
+      target: /var/log/whishper
+    - type: bind
+      source: /DATA/AppData/$AppID/models
+      target: /app/models
+    environment:
+      PUBLIC_INTERNAL_API_HOST: http://127.0.0.1:80
+      PUBLIC_TRANSLATION_API_HOST: ''
+      PUBLIC_API_HOST: ''
+      PUBLIC_WHISHPER_PROFILE: cpu
+      WHISPER_MODELS_DIR: /app/models
+      WHISPER_MODELS: tiny,small
+      UPLOAD_DIR: /app/uploads
+      CPU_THREADS: '4'
+      DB_USER: whishper
+      DB_PASS: whishper
+x-casaos:
+  app_id: org.icewhale.whishper
+  main: whishper
+  index: /
+  port_map: '18082'
+  scheme: http
+  title:
+    en_US: Whishper
+    zh_CN: Whishper
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.whishper/assets/icon.svg
+  version: 3.1.4

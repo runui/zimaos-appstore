@@ -1,0 +1,36 @@
+{
+  "thumbnail": "/apps/com.decolua.9router/assets/thumbnail.webp",
+  "screenshot_link": [
+    "/apps/com.decolua.9router/assets/screenshot-1.webp"
+  ],
+  "tagline": "AI router and token saver for coding tools",
+  "description": "9Router is a self-hosted AI routing dashboard for Claude Code, Codex, Cursor, OpenCode, Cline, OpenClaw, and other OpenAI-compatible clients. It routes requests across supported providers and models, tracks quota and usage, supports fallback strategies, and includes RTK token-saving features for tool-heavy coding workflows.\n\nThis ZimaOS package runs the official Docker image with persistent AppData storage. The dashboard and OpenAI-compatible API are exposed on port 20128. Provider credentials, API keys, SQLite data, generated secrets, certificates, logs, and runtime configuration are stored under `/app/data`.\n\n**Notes:**\n- Login with the initial password `123456`, then change it in the dashboard.\n- Configure AI provider credentials inside the 9Router dashboard before using it from CLI tools.\n- Point compatible clients to `http://<zimaos-ip>:20128/v1` and use an API key generated in the dashboard.\n- The optional Headroom token-saver sidecar from the upstream compose is not included in this initial package.\n",
+  "tips": {
+    "before_install": "## Security and Setup Notes\n\n- The initial dashboard password is `123456`; change it immediately after first login.\n- 9Router stores provider tokens and generated API keys. Keep it on a trusted LAN or protect it behind your own HTTPS reverse proxy before exposing it remotely.\n- The dashboard/API uses port `20128`; clients should use the `/v1` API path.\n- This package does not include the optional Headroom sidecar. Headroom can be configured separately if needed.\n"
+  },
+  "author": "IceWhaleTech",
+  "developer": "decolua",
+  "category": "AI",
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "update_at": "2026-06-26",
+  "website": "https://9router.com",
+  "repo": "https://github.com/decolua/9router",
+  "support": "https://github.com/decolua/9router/issues",
+  "docs": "https://github.com/decolua/9router#readme",
+  "title": "9Router",
+  "release_note": "Initial ZimaOS AppStore packaging for 9Router v0.5.12.",
+  "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
+  "id": "com.decolua.9router",
+  "version": "0.5.12",
+  "categories": [
+    "ai"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 170185207,
+    "arm64": 171504849
+  }
+}

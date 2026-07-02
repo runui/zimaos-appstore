@@ -1,5 +1,0 @@
-{
-  "id": "alist-sync",
-  "app_id": "org.icewhale.alistsync",
-  "release_notes": "- v1.1.5 corrige um erro quando a expressão regular está vazia."
-}

@@ -1,0 +1,277 @@
+name: harbor
+services:
+  log:
+    image: goharbor/harbor-log:v2.15.1@sha256:af2dac4fbd9387e4eac34cd5f51a7a3132df5aa4c0d7778006287653bc9dbda4
+    container_name: harbor-log
+    restart: unless-stopped
+    cap_drop:
+    - ALL
+    cap_add:
+    - CHOWN
+    - DAC_OVERRIDE
+    - SETGID
+    - SETUID
+    volumes:
+    - /DATA/AppData/$AppID/data/log:/var/log/docker
+    - type: bind
+      source: ./common/config/log/logrotate.conf
+      target: /etc/logrotate.d/logrotate.conf
+    - type: bind
+      source: ./common/config/log/rsyslog_docker.conf
+      target: /etc/rsyslog.d/rsyslog_docker.conf
+    ports:
+    - target: 10514
+      published: '1514'
+      protocol: tcp
+    networks:
+    - harbor
+  registry:
+    image: goharbor/registry-photon:v2.15.1@sha256:ebf0325c2661729dbb317cbf839608eb8b15cfa158911a94976f2c21563c466e
+    container_name: registry
+    restart: unless-stopped
+    cap_drop:
+    - ALL
+    cap_add:
+    - CHOWN
+    - SETGID
+    - SETUID
+    volumes:
+    - /DATA/AppData/$AppID/data/registry:/storage
+    - type: bind
+      source: ./common/config/registry
+      target: /etc/registry
+    - type: bind
+      source: ./secrets/registry/root.crt
+      target: /etc/registry/root.crt
+    - type: bind
+      source: ./common/config/shared/trust-certificates
+      target: /harbor_cust_cert
+    networks:
+    - harbor
+    depends_on:
+    - log
+    logging:
+      driver: syslog
+      options:
+        syslog-address: tcp://127.0.0.1:1514
+        tag: registry
+  registryctl:
+    image: goharbor/harbor-registryctl:v2.15.1@sha256:554147a956989175f63f8d41573d716c6ddf6052acd1749c88c0f99ce6ee2bff
+    container_name: registryctl
+    env_file:
+    - ./common/config/registryctl/env
+    restart: unless-stopped
+    cap_drop:
+    - ALL
+    cap_add:
+    - CHOWN
+    - SETGID
+    - SETUID
+    volumes:
+    - /DATA/AppData/$AppID/data/registry:/storage
+    - type: bind
+      source: ./common/config/registry
+      target: /etc/registry
+    - type: bind
+      source: ./common/config/registryctl/config.yml
+      target: /etc/registryctl/config.yml
+    - type: bind
+      source: ./common/config/shared/trust-certificates
+      target: /harbor_cust_cert
+    networks:
+    - harbor
+    depends_on:
+    - log
+    logging:
+      driver: syslog
+      options:
+        syslog-address: tcp://127.0.0.1:1514
+        tag: registryctl
+  postgresql:
+    image: goharbor/harbor-db:v2.15.1@sha256:7944d8594a48a8d014e1fa440bc788348f2a779fa2c612ed6b79390cd767e6db
+    container_name: harbor-db
+    restart: unless-stopped
+    cap_drop:
+    - ALL
+    cap_add:
+    - CHOWN
+    - DAC_OVERRIDE
+    - SETGID
+    - SETUID
+    volumes:
+    - /DATA/AppData/$AppID/data/database:/var/lib/postgresql/data
+    networks:
+    - harbor
+    env_file:
+    - ./common/config/db/env
+    depends_on:
+    - log
+    logging:
+      driver: syslog
+      options:
+        syslog-address: tcp://127.0.0.1:1514
+        tag: postgresql
+    shm_size: 1gb
+  core:
+    image: goharbor/harbor-core:v2.15.1@sha256:887a85b8ea98b76bfc9f715f1a0785bb99f9a1034241513902dd6e95be922a83
+    container_name: harbor-core
+    env_file:
+    - ./common/config/core/env
+    restart: unless-stopped
+    cap_drop:
+    - ALL
+    cap_add:
+    - SETGID
+    - SETUID
+    volumes:
+    - /DATA/AppData/$AppID/data/ca_download:/etc/core/ca
+    - /DATA/AppData/$AppID/data:/data
+    - type: bind
+      source: ./common/config/core/certificates
+      target: /etc/core/certificates
+    - type: bind
+      source: ./common/config/core/app.conf
+      target: /etc/core/app.conf
+    - type: bind
+      source: ./secrets/core/private_key.pem
+      target: /etc/core/private_key.pem
+    - type: bind
+      source: ./secrets/keys/secretkey
+      target: /etc/core/key
+    - type: bind
+      source: ./common/config/shared/trust-certificates
+      target: /harbor_cust_cert
+    networks:
+    - harbor
+    depends_on:
+    - log
+    - registry
+    - redis
+    - postgresql
+    logging:
+      driver: syslog
+      options:
+        syslog-address: tcp://127.0.0.1:1514
+        tag: core
+  portal:
+    image: goharbor/harbor-portal:v2.15.1@sha256:ac55161c57a8351807adf8f8def264bdd52667c371d0436beefebdac4341c9e2
+    container_name: harbor-portal
+    restart: unless-stopped
+    cap_drop:
+    - ALL
+    cap_add:
+    - CHOWN
+    - SETGID
+    - SETUID
+    - NET_BIND_SERVICE
+    volumes:
+    - type: bind
+      source: ./common/config/portal/nginx.conf
+      target: /etc/nginx/nginx.conf
+    networks:
+    - harbor
+    depends_on:
+    - log
+    logging:
+      driver: syslog
+      options:
+        syslog-address: tcp://127.0.0.1:1514
+        tag: portal
+  jobservice:
+    image: goharbor/harbor-jobservice:v2.15.1@sha256:0de4fd2ce3a02d3e6591b439e4674ea085885ddf43652b44004cc67eb19dba12
+    container_name: harbor-jobservice
+    env_file:
+    - ./common/config/jobservice/env
+    restart: unless-stopped
+    cap_drop:
+    - ALL
+    cap_add:
+    - CHOWN
+    - SETGID
+    - SETUID
+    volumes:
+    - /DATA/AppData/$AppID/data/job_logs:/var/log/jobs
+    - type: bind
+      source: ./common/config/jobservice/config.yml
+      target: /etc/jobservice/config.yml
+    - type: bind
+      source: ./common/config/shared/trust-certificates
+      target: /harbor_cust_cert
+    networks:
+    - harbor
+    depends_on:
+    - core
+    logging:
+      driver: syslog
+      options:
+        syslog-address: tcp://127.0.0.1:1514
+        tag: jobservice
+  redis:
+    image: goharbor/valkey-photon:v2.15.1-dev@sha256:f9a1699d282e46f73d489f9cfba4c03691901c7b156ec660ef62834dee86114c
+    container_name: redis
+    restart: unless-stopped
+    cap_drop:
+    - ALL
+    cap_add:
+    - CHOWN
+    - SETGID
+    - SETUID
+    volumes:
+    - /DATA/AppData/$AppID/data/redis:/var/lib/redis
+    networks:
+    - harbor
+    depends_on:
+    - log
+    logging:
+      driver: syslog
+      options:
+        syslog-address: tcp://127.0.0.1:1514
+        tag: redis
+  proxy:
+    image: goharbor/nginx-photon:v2.15.1@sha256:1f9d06d040f2478f6cf7f6da0091877bf987a641810f4bfaadb2a87d73dbf4fb
+    container_name: nginx
+    restart: unless-stopped
+    cap_drop:
+    - ALL
+    cap_add:
+    - CHOWN
+    - SETGID
+    - SETUID
+    - NET_BIND_SERVICE
+    volumes:
+    - type: bind
+      source: ./common/config/nginx
+      target: /etc/nginx
+    - type: bind
+      source: ./common/config/shared/trust-certificates
+      target: /harbor_cust_cert
+    networks:
+    - harbor
+    ports:
+    - target: 8080
+      published: '18080'
+      protocol: tcp
+    depends_on:
+    - registry
+    - core
+    - portal
+    - log
+    logging:
+      driver: syslog
+      options:
+        syslog-address: tcp://127.0.0.1:1514
+        tag: proxy
+networks:
+  harbor:
+    external: false
+x-casaos:
+  app_id: org.icewhale.harbor
+  main: proxy
+  index: /
+  port_map: '18080'
+  scheme: http
+  title:
+    en_US: Harbor
+    zh_CN: Harbor
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.harbor/assets/icon.svg
+  version: 2.15.1

@@ -1,0 +1,10 @@
+{
+  "id": "org.icewhale.distribution",
+  "title": "Distribution Registry",
+  "tagline": "存储并分发 OCI 容器镜像。",
+  "description": "Distribution Registry 是开源的 OCI/Docker Registry 实现，可用于存储、管理和分发容器镜像及其他 OCI 制品。\n\n此应用使用上游 Registry 镜像，以轻量单服务 HTTP API 形式运行在 5000 端口。镜像层和清单数据会持久化到应用数据目录。\n",
+  "release_note": "迁移至 distribution/registry v2.7.0 经典 OCI Registry 稳定版本。",
+  "tips": {
+    "before_install": "此应用提供 Registry API，不包含图形化 Web UI。健康检查入口为 /v2/。\n\n默认配置没有身份验证，也没有 TLS。请勿在未配置反向代理、TLS 和访问控制的情况下将此端口暴露到不可信网络。\n"
+  }
+}
