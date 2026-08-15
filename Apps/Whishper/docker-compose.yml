@@ -1,0 +1,221 @@
+name: whishper
+
+services:
+  mongo:
+    image: mongo:8.2.2
+    container_name: whishper-mongo
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /data/db
+      - type: bind
+        source: /DATA/AppData/$AppID/db-logs
+        target: /var/log/mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: whishper
+      MONGO_INITDB_ROOT_PASSWORD: whishper
+    command: ["--logpath", "/var/log/mongodb/mongod.log"]
+    expose:
+      - 27017
+    x-casaos:
+      volumes:
+        - container: /data/db
+          description:
+            en_US: MongoDB database storage for Whishper transcriptions and metadata.
+            zh_CN: 用于保存 Whishper 转录记录和元数据的 MongoDB 数据目录。
+        - container: /var/log/mongodb
+          description:
+            en_US: MongoDB log directory.
+            zh_CN: MongoDB 日志目录。
+
+  translate:
+    image: libretranslate/libretranslate:v1.6.5
+    container_name: whishper-libretranslate
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/libretranslate/data
+        target: /home/libretranslate/.local/share
+      - type: bind
+        source: /DATA/AppData/$AppID/libretranslate/cache
+        target: /home/libretranslate/.local/cache
+    environment:
+      LT_DISABLE_WEB_UI: "true"
+      LT_LOAD_ONLY: en,zh,es,fr
+      LT_UPDATE_MODELS: "true"
+    expose:
+      - 5000
+    networks:
+      default:
+        aliases:
+          - translate
+    healthcheck:
+      test: ["CMD-SHELL", "./venv/bin/python scripts/healthcheck.py"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    x-casaos:
+      envs:
+        - container: LT_LOAD_ONLY
+          description:
+            en_US: Comma-separated LibreTranslate languages to load. Add languages if you need more translation targets.
+            zh_CN: LibreTranslate 要加载的语言列表，使用英文逗号分隔。如需更多翻译目标可自行增加。
+      volumes:
+        - container: /home/libretranslate/.local/share
+          description:
+            en_US: LibreTranslate language model data.
+            zh_CN: LibreTranslate 语言模型数据目录。
+        - container: /home/libretranslate/.local/cache
+          description:
+            en_US: LibreTranslate cache directory.
+            zh_CN: LibreTranslate 缓存目录。
+
+  whishper:
+    image: ghcr.io/runui/whishper-video:723b987
+    container_name: whishper
+    restart: unless-stopped
+    depends_on:
+      - mongo
+      - translate
+    networks:
+      default:
+        aliases:
+          - whishper
+    ports:
+      - target: 80
+        published: "18082"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/uploads
+        target: /app/uploads
+      - type: bind
+        source: /DATA/AppData/$AppID/logs
+        target: /var/log/whishper
+      - type: bind
+        source: /DATA/AppData/$AppID/models
+        target: /app/models
+    environment:
+      PUBLIC_INTERNAL_API_HOST: http://127.0.0.1:80
+      PUBLIC_TRANSLATION_API_HOST: ""
+      PUBLIC_API_HOST: ""
+      PUBLIC_WHISHPER_PROFILE: cpu
+      WHISPER_MODELS_DIR: /app/models
+      WHISPER_MODELS: tiny,small
+      UPLOAD_DIR: /app/uploads
+      CPU_THREADS: "4"
+      DB_USER: whishper
+      DB_PASS: whishper
+    x-casaos:
+      ports:
+        - container: "80"
+          description:
+            en_US: Whishper Web UI port.
+            zh_CN: Whishper Web UI 访问端口。
+      envs:
+        - container: WHISPER_MODELS
+          description:
+            en_US: Comma-separated Whisper models to make available. Larger models use more disk, memory, and CPU.
+            zh_CN: 可用 Whisper 模型列表，使用英文逗号分隔。更大的模型会占用更多磁盘、内存和 CPU。
+        - container: CPU_THREADS
+          description:
+            en_US: CPU threads used for local transcription.
+            zh_CN: 本地转录使用的 CPU 线程数。
+      volumes:
+        - container: /app/uploads
+          description:
+            en_US: Uploaded media files and generated transcription assets.
+            zh_CN: 上传的媒体文件和生成的转录相关文件。
+        - container: /app/models
+          description:
+            en_US: Downloaded Whisper model cache. Keep this volume to avoid re-downloading models after updates.
+            zh_CN: 下载的 Whisper 模型缓存。保留该目录可避免更新后重新下载模型。
+        - container: /var/log/whishper
+          description:
+            en_US: Whishper application logs.
+            zh_CN: Whishper 应用日志目录。
+
+x-casaos:
+  id: org.icewhale.whishper
+  main: whishper
+  index: /
+  port_map: "18082"
+  scheme: http
+  title:
+    en_US: Whishper
+    zh_CN: Whishper
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Whishper/icon.svg
+  thumbnail: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Whishper/thumbnail.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Whishper/screenshot-1.png
+  tagline:
+    en_US: Local audio transcription and subtitling
+    zh_CN: 本地音频转录与字幕工具
+  description:
+    en_US: |
+      Whishper is an open-source, fully local audio transcription and subtitling suite with a web UI. It can transcribe uploaded audio or video files, process supported online media URLs through yt-dlp, export results as TXT, JSON, VTT, or SRT, and translate subtitles through LibreTranslate.
+
+      This ZimaOS package runs the CPU version with MongoDB for metadata and LibreTranslate for local translation. Whisper models and uploaded files are stored under AppData so they survive container updates and restarts.
+
+      **Key Features:**
+      - Local transcription powered by Faster Whisper
+      - Upload files or transcribe supported media URLs
+      - Export transcriptions as TXT, JSON, VTT, and SRT
+      - Subtitle editor with timing and segment tools
+      - Local translation through LibreTranslate
+      - Persistent model cache and upload storage
+
+      **Notes:**
+      - First use may take time while Whisper and LibreTranslate models are downloaded.
+      - Larger Whisper models require more disk space, memory, and CPU time.
+      - Whishper does not provide built-in user authentication in this version; avoid exposing it directly to the public internet.
+    zh_CN: |
+      Whishper 是一个开源的本地音频转录和字幕工具，提供 Web UI。它可以转录上传的音频或视频文件，也可以通过 yt-dlp 处理受支持的在线媒体 URL，并支持导出 TXT、JSON、VTT、SRT 格式，还可以通过 LibreTranslate 进行字幕翻译。
+
+      这个 ZimaOS 应用使用 CPU 版本运行，使用 MongoDB 保存元数据，使用 LibreTranslate 提供本地翻译。Whisper 模型和上传文件都会保存到 AppData 中，容器更新或重启后仍会保留。
+
+      **主要功能：**
+      - 基于 Faster Whisper 的本地转录
+      - 支持上传文件或转录受支持的媒体 URL
+      - 支持导出 TXT、JSON、VTT、SRT
+      - 带时间轴和分段工具的字幕编辑器
+      - 通过 LibreTranslate 进行本地翻译
+      - 持久化模型缓存和上传文件
+
+      **注意事项：**
+      - 首次使用时可能需要下载 Whisper 和 LibreTranslate 模型，启动和转录会比较慢。
+      - 更大的 Whisper 模型会占用更多磁盘、内存和 CPU 时间。
+      - 当前版本 Whishper 没有内置用户认证，不建议直接暴露到公网。
+  tips:
+    before_install:
+      en_US: |
+        ## Resource Notice
+
+        - This package runs on CPU by default. Transcription can be slow on low-power devices.
+        - The first transcription may download Whisper models into `/app/models`.
+        - LibreTranslate loads `en,zh,es,fr` by default to reduce startup cost. Edit `LT_LOAD_ONLY` if you need more languages.
+        - Whishper has no built-in user login in this release. Keep it on a trusted network or protect it behind your own reverse proxy authentication.
+      zh_CN: |
+        ## 资源提示
+
+        - 该应用默认使用 CPU 运行，低功耗设备上的转录速度可能较慢。
+        - 首次转录可能会将 Whisper 模型下载到 `/app/models`。
+        - LibreTranslate 默认只加载 `en,zh,es,fr` 以降低启动成本，如需更多语言请修改 `LT_LOAD_ONLY`。
+        - 当前版本 Whishper 没有内置用户登录功能，请仅在可信网络中使用，或通过自己的反向代理认证进行保护。
+  author: IceWhaleTech
+  developer: pluja
+  category: AI
+  architectures:
+    - amd64
+    - arm64
+  version: "3.1.4"
+  updateAt: "2026-06-28"
+  releaseNotes:
+    en_US: Switch to RunUI whishper-video image at commit 723b987 (v3.1.4+) with amd64/arm64 support.
+    zh_CN: 切换到 RunUI whishper-video 镜像 723b987 (v3.1.4+)，支持 amd64/arm64 架构。
+  website: https://whishper-docs.pages.dev/
+  repo: https://github.com/pluja/whishper
+  support: https://github.com/pluja/whishper/issues
+  docs: https://whishper-docs.pages.dev/guides/install
