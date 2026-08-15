@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-07-02T05:26:55Z",
-  "app_count": 171,
+  "updated_at": "2026-08-15T08:23:30Z",
+  "app_count": 172,
   "base_url": "https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages",
   "apps": [
     {
@@ -1945,6 +1945,27 @@
       "version": "0.44.0"
     },
     {
+      "id": "org.icewhale.motrix",
+      "title": "Motrix",
+      "tagline": "Full-featured download manager for NAS and home servers",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "IceWhaleTech",
+      "developer": "agalwood",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/org.icewhale.motrix/assets/icon.png",
+      "thumbnail": "/apps/org.icewhale.motrix/assets/thumbnail.webp",
+      "compose_url": "/apps/org.icewhale.motrix/docker-compose.yml",
+      "meta_url": "/apps/org.icewhale.motrix/meta.json",
+      "content_hash": "7b828937",
+      "version": "2.0.0"
+    },
+    {
       "id": "org.icewhale.mylar3",
       "title": "Mylar3",
       "tagline": "Automatic comic book (cbr/cbz) downloader",
@@ -2394,7 +2415,7 @@
       "thumbnail": "",
       "compose_url": "/apps/org.icewhale.opodsync/docker-compose.yml",
       "meta_url": "/apps/org.icewhale.opodsync/meta.json",
-      "content_hash": "43eb7544",
+      "content_hash": "765fb2c4",
       "version": "0.0.1"
     },
     {
@@ -3619,7 +3640,7 @@
       "thumbnail": "",
       "compose_url": "/apps/org.icewhale.ztnet/docker-compose.yml",
       "meta_url": "/apps/org.icewhale.ztnet/meta.json",
-      "content_hash": "d691fc66",
+      "content_hash": "42b39411",
       "version": "0.7.18"
     }
   ]

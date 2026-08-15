@@ -365,6 +365,11 @@
       "tagline": "用于motion的Web前端守护程序。"
     },
     {
+      "id": "org.icewhale.motrix",
+      "tagline": "功能全面的 NAS 与家庭服务器下载管理器",
+      "title": "Motrix"
+    },
+    {
       "id": "org.icewhale.mylar3",
       "tagline": "自动漫画（cbr/cbz）下载程序"
     },

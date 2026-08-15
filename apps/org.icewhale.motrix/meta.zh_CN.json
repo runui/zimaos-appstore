@@ -1,0 +1,10 @@
+{
+  "id": "org.icewhale.motrix",
+  "title": "Motrix",
+  "tagline": "功能全面的 NAS 与家庭服务器下载管理器",
+  "description": "Motrix 是一款界面简洁、支持深色模式的开源下载管理器。这个 ZimaOS 应用以无头服务器方式运行：自带 Web 界面，支持 HTTP、BT 和磁力链接下载，具备 SQLite 会话持久化、Tracker 管理、上传/下载限速、插件沙箱，以及面向官方 `@motrix/cli` 和 Agent 客户端的安全设备码配对。\n\n由于上游尚未发布官方服务器镜像，本应用使用由上游提交 `7991744` 构建的快照镜像（`ghcr.io/runui/motrix-server:7991744`）。应用状态（数据库、设置、aria2 会话、种子元数据、插件、operator token）持久化在 `/data`，下载文件写入 `/downloads`。\n\n**注意事项：**\n- Web 界面：`http://<zimaos-ip>:18090`\n- 已发布 `16801`（MDXP）端口用于远程 CLI/Agent 客户端配对；请将 `MOTRIX_PUBLIC_URL` 设置为可访问的 Web 地址，远程客户端才能获得有效的批准 URL。\n- 直连 HTTP 仅建议在可信局域网使用；暴露到公网前请配置 TLS 反向代理。\n",
+  "release_note": "首次将 Motrix v2 无头服务器打包为 ZimaOS 应用，镜像由上游提交 7991744 构建（ghcr.io/runui/motrix-server:7991744）。",
+  "tips": {
+    "before_install": "## 配置提示\n\n- 首次启动时 Motrix 会在 `/data/operator-token` 生成 operator token；Web 界面通过配对流程批准 CLI/Agent 设备码，没有默认的网页登录密码。\n- 从其他设备配对官方 Motrix CLI 或 Agent 客户端时，请设置 `MOTRIX_PUBLIC_URL`（例如 `http://<zimaos-ip>:18090`），该值不要使用 `localhost`。\n- 直连 HTTP 仅建议在可信局域网使用。如需远程访问，请在 `18090` 和 `16801` 端口前配置 TLS 反向代理，并用防火墙保护源端口。\n- 该镜像是由上游提交 `7991744` 构建的开发快照；上游尚未发布官方服务器镜像。请关注上游版本发布，官方镜像发布后应重新打包。\n- 图标为上游官方应用图标；因上游未提供 Web 界面截图，缩略图和截图以该图标作为占位资源。\n"
+  }
+}

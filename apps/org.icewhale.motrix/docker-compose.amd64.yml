@@ -1,0 +1,44 @@
+name: motrix
+services:
+  server:
+    image: ghcr.io/runui/motrix-server:7991744
+    container_name: motrix-server
+    init: true
+    read_only: true
+    user: ${PUID:-1000}:${PGID:-1000}
+    security_opt:
+    - no-new-privileges:true
+    restart: unless-stopped
+    stop_grace_period: 2m
+    tmpfs:
+    - /tmp:rw,noexec,nosuid,size=64m,mode=1777
+    environment:
+      TZ: $TZ
+      MOTRIX_MDXP_HOST: 0.0.0.0
+      MOTRIX_MDXP_PORT: '16801'
+      MOTRIX_PUBLIC_URL: ''
+    ports:
+    - target: 8080
+      published: '18090'
+      protocol: tcp
+    - target: 16801
+      published: '16801'
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: /DATA/AppData/$AppID/data
+      target: /data
+    - type: bind
+      source: /DATA/AppData/$AppID/downloads
+      target: /downloads
+x-casaos:
+  app_id: org.icewhale.motrix
+  main: server
+  index: /
+  port_map: '18090'
+  scheme: http
+  title:
+    en_US: Motrix
+    zh_CN: Motrix
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.motrix/assets/icon.png
+  version: 2.0.0
