@@ -1,0 +1,132 @@
+name: motrix
+
+services:
+  server:
+    image: ghcr.io/runui/motrix-server:7991744
+    container_name: motrix-server
+    init: true
+    read_only: true
+    user: "${PUID:-1000}:${PGID:-1000}"
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    stop_grace_period: 2m
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m,mode=1777
+    environment:
+      TZ: $TZ
+      MOTRIX_MDXP_HOST: 0.0.0.0
+      MOTRIX_MDXP_PORT: "16801"
+      MOTRIX_PUBLIC_URL: ""
+      MOTRIX_OPERATOR_TOKEN: "casaos"
+    ports:
+      - target: 8080
+        published: "18090"
+        protocol: tcp
+      - target: 16801
+        published: "16801"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+      - type: bind
+        source: /DATA/AppData/$AppID/downloads
+        target: /downloads
+    x-casaos:
+      ports:
+        - container: "8080"
+          description:
+            en_US: Motrix web UI, operator API, and health endpoint.
+            zh_CN: Motrix Web 界面、管理 API 和健康检查端口。
+        - container: "16801"
+          description:
+            en_US: MDXP port for pairing the official Motrix CLI and agent clients.
+            zh_CN: MDXP 端口，用于 Motrix CLI 和 Agent 客户端配对。
+      envs:
+        - container: MOTRIX_PUBLIC_URL
+          description:
+            en_US: Optional externally reachable Web URL returned to CLI clients during device-code pairing, for example the Web URL of this NAS (LAN IP or domain) with port 18090. Leave empty for local use only.
+            zh_CN: 可选的外部可访问 Web 地址，在设备码配对时返回给 CLI 客户端，例如本 NAS 的 Web 地址（局域网 IP 或域名）加 18090 端口。仅本地使用时留空即可。
+        - container: MOTRIX_OPERATOR_TOKEN
+          description:
+            en_US: Operator token used to unlock the Web UI and the operator API. Change the default before exposing the app to the network.
+            zh_CN: 用于解锁 Web 界面和操作 API 的 operator token。将应用暴露到网络前请修改默认值。
+      volumes:
+        - container: /data
+          description:
+            en_US: SQLite database, settings, aria2 session state, torrent metadata, installed plugins, and the generated operator token (when `MOTRIX_OPERATOR_TOKEN` is not set).
+            zh_CN: SQLite 数据库、设置、aria2 会话状态、种子元数据、已安装插件以及生成的 operator token（未设置 `MOTRIX_OPERATOR_TOKEN` 时）。
+        - container: /downloads
+          description:
+            en_US: Completed and in-progress HTTP, BitTorrent, and magnet downloads.
+            zh_CN: 已完成和进行中的 HTTP、BT 和磁力链接下载文件。
+
+x-casaos:
+  id: org.icewhale.motrix
+  main: server
+  index: /
+  port_map: "18090"
+  scheme: http
+  title:
+    en_US: Motrix
+    zh_CN: Motrix
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Motrix/icon.png
+  thumbnail: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Motrix/thumbnail.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Motrix/screenshot-1.png
+  tagline:
+    en_US: Full-featured download manager for NAS and home servers
+    zh_CN: 功能全面的 NAS 与家庭服务器下载管理器
+  description:
+    en_US: |
+      Motrix is an open-source download manager with a clean interface and dark mode. This ZimaOS package runs it as a headless server: a self-contained web UI for HTTP, BitTorrent, and magnet downloads, with SQLite-backed sessions, tracker management, upload/download speed limits, plugin sandboxing, and secure device-code pairing for the official `@motrix/cli` and agent clients.
+
+      Because upstream has not published official server images yet, this package uses a snapshot image built from upstream commit `7991744` (`ghcr.io/runui/motrix-server:7991744`). App state (database, settings, aria2 sessions, torrent metadata, plugins, operator token) persists in `/data`, and downloaded files are written to `/downloads`.
+
+      **Notes:**
+      - Web UI: open this app from the ZimaOS interface, or visit port `18090` on this NAS's LAN IP or domain.
+      - Port `16801` (MDXP) is published for pairing remote CLI/agent clients; set `MOTRIX_PUBLIC_URL` to the reachable Web URL so remote clients receive a usable approval URL.
+      - Direct HTTP is intended for trusted LANs; use a TLS reverse proxy for internet exposure.
+    zh_CN: |
+      Motrix 是一款界面简洁、支持深色模式的开源下载管理器。这个 ZimaOS 应用以无头服务器方式运行：自带 Web 界面，支持 HTTP、BT 和磁力链接下载，具备 SQLite 会话持久化、Tracker 管理、上传/下载限速、插件沙箱，以及面向官方 `@motrix/cli` 和 Agent 客户端的安全设备码配对。
+
+      由于上游尚未发布官方服务器镜像，本应用使用由上游提交 `7991744` 构建的快照镜像（`ghcr.io/runui/motrix-server:7991744`）。应用状态（数据库、设置、aria2 会话、种子元数据、插件、operator token）持久化在 `/data`，下载文件写入 `/downloads`。
+
+      **注意事项：**
+      - Web 界面：在 ZimaOS 界面中打开本应用，或通过本 NAS 局域网 IP/域名的 `18090` 端口访问。
+      - 已发布 `16801`（MDXP）端口用于远程 CLI/Agent 客户端配对；请将 `MOTRIX_PUBLIC_URL` 设置为可访问的 Web 地址，远程客户端才能获得有效的批准 URL。
+      - 直连 HTTP 仅建议在可信局域网使用；暴露到公网前请配置 TLS 反向代理。
+  tips:
+    before_install:
+      en_US: |
+        ## Setup Notes
+
+        - The default operator token is `casaos` (from `MOTRIX_OPERATOR_TOKEN`); change it in the app settings after first use. The Web UI unlock and pairing approvals use this token; there is no separate web login password. If `MOTRIX_OPERATOR_TOKEN` is removed, the server generates and persists `/data/operator-token` on first start.
+        - Set `MOTRIX_PUBLIC_URL` to the Web URL reachable from the other machine (this NAS's LAN IP or domain with port `18090`) when pairing the official Motrix CLI or agent clients; do not use `localhost` in this value.
+        - Plain HTTP is appropriate on a trusted LAN only. For remote access, put a TLS reverse proxy in front of ports `18090` and `16801` and protect the origin ports with firewall rules.
+        - This image is a development snapshot built from upstream commit `7991744`; upstream has not published an official server image yet. Track upstream releases and re-package when the first official image lands.
+        - The icon is the official upstream app icon; the thumbnail and screenshot are placeholders made from the same icon because upstream does not ship web UI screenshots.
+      zh_CN: |
+        ## 配置提示
+
+        - 默认 operator token 为 `casaos`（来自 `MOTRIX_OPERATOR_TOKEN`），首次使用后请在应用设置中修改。Web 界面解锁和配对批准都使用该 token，没有单独的网页登录密码。若删除 `MOTRIX_OPERATOR_TOKEN`，服务器会在首次启动时生成并持久化 `/data/operator-token`。
+        - 从其他设备配对官方 Motrix CLI 或 Agent 客户端时，请将 `MOTRIX_PUBLIC_URL` 设置为该设备可访问的 Web 地址（本 NAS 局域网 IP 或域名加 `18090` 端口），该值不要使用 `localhost`。
+        - 直连 HTTP 仅建议在可信局域网使用。如需远程访问，请在 `18090` 和 `16801` 端口前配置 TLS 反向代理，并用防火墙保护源端口。
+        - 该镜像是由上游提交 `7991744` 构建的开发快照；上游尚未发布官方服务器镜像。请关注上游版本发布，官方镜像发布后应重新打包。
+        - 图标为上游官方应用图标；因上游未提供 Web 界面截图，缩略图和截图以该图标作为占位资源。
+  author: IceWhaleTech
+  developer: agalwood
+  category: Media
+  architectures:
+    - amd64
+    - arm64
+  version: "2.0.0"
+  update_at: "2026-08-15"
+  release_notes:
+    en_US: Initial ZimaOS AppStore packaging of the Motrix v2 headless server, built from upstream commit 7991744 (ghcr.io/runui/motrix-server:7991744).
+    zh_CN: 首次将 Motrix v2 无头服务器打包为 ZimaOS 应用，镜像由上游提交 7991744 构建（ghcr.io/runui/motrix-server:7991744）。
+  website: https://motrix.app
+  repo: https://github.com/agalwood/Motrix
+  support: https://github.com/agalwood/Motrix/issues
+  docs: https://github.com/agalwood/Motrix/blob/main/docs/docker-server.md
