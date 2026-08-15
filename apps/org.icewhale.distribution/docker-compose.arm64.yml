@@ -19,7 +19,7 @@ services:
       source: /DATA/AppData/$AppID/registry
       target: /var/lib/registry
 x-casaos:
-  app_id: org.icewhale.distribution
+  id: org.icewhale.distribution
   main: distribution
   index: /v2/
   port_map: '5000'

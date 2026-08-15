@@ -344,7 +344,7 @@ networks:
   ragflow:
     driver: bridge
 x-casaos:
-  app_id: org.icewhale.ragflow
+  id: org.icewhale.ragflow
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.ragflow/assets/icon.svg
   index: /
   main: ragflow

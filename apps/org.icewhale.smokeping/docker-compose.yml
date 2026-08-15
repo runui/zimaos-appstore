@@ -25,7 +25,7 @@ services:
       target: /data
     container_name: smokeping
 x-casaos:
-  app_id: org.icewhale.smokeping
+  id: org.icewhale.smokeping
   main: smokeping
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.smokeping/assets/icon.svg
   title:

@@ -23,7 +23,7 @@ services:
     - conda install -c conda-forge jupyterlab -y --quiet && jupyter lab --notebook-dir=/opt/notebooks
       --ip='*' --port=8888 --no-browser --allow-root
 x-casaos:
-  app_id: org.icewhale.anaconda3
+  id: org.icewhale.anaconda3
   main: anaconda3
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.anaconda3/assets/icon.svg
   scheme: http
@@ -31,4 +31,4 @@ x-casaos:
   index: /
   title:
     en_US: Anaconda3
-  version: 2024.10.0-1
+  version: 2024.10-1

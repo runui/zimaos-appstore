@@ -35,7 +35,7 @@ services:
     - turbodiffusion/app_gradio.py
     restart: unless-stopped
 x-casaos:
-  app_id: org.icewhale.turbodiffusionnvidia
+  id: org.icewhale.turbodiffusionnvidia
   title:
     de_DE: TurboDiffusion(Nvidia GPU)
     el_GR: TurboDiffusion(Nvidia GPU)
@@ -57,4 +57,4 @@ x-casaos:
   port_map: '27860'
   index: /
   scheme: http
-  version: 20260312.0.0
+  version: 2026.03.12

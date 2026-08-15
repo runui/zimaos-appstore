@@ -27,7 +27,7 @@ services:
       CLOUD_URL: https://9router.com
       NEXT_PUBLIC_CLOUD_URL: https://9router.com
 x-casaos:
-  app_id: com.decolua.9router
+  id: com.decolua.9router
   main: 9router
   index: /
   port_map: '20128'

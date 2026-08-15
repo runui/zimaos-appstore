@@ -34,7 +34,7 @@ networks:
   langflow-net:
     driver: bridge
 x-casaos:
-  app_id: org.icewhale.langflow
+  id: org.icewhale.langflow
   main: langflow
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.langflow/assets/icon.svg
   scheme: http

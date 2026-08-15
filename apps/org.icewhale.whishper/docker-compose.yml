@@ -85,7 +85,7 @@ services:
       DB_USER: whishper
       DB_PASS: whishper
 x-casaos:
-  app_id: org.icewhale.whishper
+  id: org.icewhale.whishper
   main: whishper
   index: /
   port_map: '18082'

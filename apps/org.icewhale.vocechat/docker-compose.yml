@@ -20,7 +20,7 @@ services:
       target: /home/vocechat-server/data
     container_name: vocechat
 x-casaos:
-  app_id: org.icewhale.vocechat
+  id: org.icewhale.vocechat
   main: vocechat
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.vocechat/assets/icon.svg
   title:

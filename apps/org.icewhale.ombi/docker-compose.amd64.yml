@@ -23,7 +23,7 @@ services:
       target: /config
     container_name: ombi
 x-casaos:
-  app_id: org.icewhale.ombi
+  id: org.icewhale.ombi
   main: ombi
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.ombi/assets/icon.svg
   title:

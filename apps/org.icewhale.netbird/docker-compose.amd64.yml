@@ -24,7 +24,7 @@ services:
       source: /DATA/AppData/$AppID
       target: /var/lib/netbird
 x-casaos:
-  app_id: org.icewhale.netbird
+  id: org.icewhale.netbird
   main: netbird
   icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@gh-pages/apps/org.icewhale.netbird/assets/icon.svg
   scheme: https

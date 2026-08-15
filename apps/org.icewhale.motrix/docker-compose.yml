@@ -33,7 +33,7 @@ services:
       source: /DATA/AppData/$AppID/downloads
       target: /downloads
 x-casaos:
-  app_id: org.icewhale.motrix
+  id: org.icewhale.motrix
   main: server
   index: /
   port_map: '18090'
