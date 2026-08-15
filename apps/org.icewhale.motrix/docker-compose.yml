@@ -17,6 +17,7 @@ services:
       MOTRIX_MDXP_HOST: 0.0.0.0
       MOTRIX_MDXP_PORT: '16801'
       MOTRIX_PUBLIC_URL: ''
+      MOTRIX_OPERATOR_TOKEN: casaos
     ports:
     - target: 8080
       published: '18090'

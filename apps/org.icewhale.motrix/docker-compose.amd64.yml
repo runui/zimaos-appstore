@@ -1,7 +1,7 @@
 name: motrix
 services:
   server:
-    image: ghcr.io/runui/motrix-server:7991744
+    image: ghcr.io/runui/motrix-server:7991744@sha256:e60fdf626cfe2b3e0319fb6d60c7e347ca0a91ffc0f45b029e79e1ec064390d3
     container_name: motrix-server
     init: true
     read_only: true
@@ -17,6 +17,7 @@ services:
       MOTRIX_MDXP_HOST: 0.0.0.0
       MOTRIX_MDXP_PORT: '16801'
       MOTRIX_PUBLIC_URL: ''
+      MOTRIX_OPERATOR_TOKEN: casaos
     ports:
     - target: 8080
       published: '18090'

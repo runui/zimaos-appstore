@@ -55,6 +55,7 @@ ghcr.io/mafen/playit-docker:latest sha256:a5734aa5721f90fe809defbf7ec2f9c3b615e8
 ghcr.io/maybe-finance/maybe:latest sha256:e78ef7c87710dedfe42d8f04578554774f1270c19a7e047f150b5b2fcddfb29e
 ghcr.io/mckaywrigley/chatbot-ui:main sha256:2e96d7b5e96219a7db00a7d07a24bc1d71f096820f1f16d6d4dc995e9bb7875a
 ghcr.io/open-webui/open-webui:ollama sha256:8232118fd287acdd04e47c7fea9ead748fcd72c22190a437688f80c5c67bff01
+ghcr.io/runui/motrix-server:7991744 sha256:e60fdf626cfe2b3e0319fb6d60c7e347ca0a91ffc0f45b029e79e1ec064390d3
 ghcr.io/runui/whishper-video:723b987 sha256:5f0d75fff3a1cfc00e00915814b484ee9de9dee691a7649319e6ad061eaed2ea
 ghcr.io/swingmx/swingmusic:v2.1.4 sha256:ecef8036167876a7d6d81d3a9f0bcbd7641e334afda24b6c9666b1e00112a4ad
 ghcr.io/we-promise/sure:0.6.5-hotfix.1 sha256:c6ea8c6c155c69c2bca1779f3e000352d225bb21f542e00791061d6074a76f4d
