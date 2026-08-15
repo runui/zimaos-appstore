@@ -1,0 +1,148 @@
+name: subgen
+
+services:
+  subgen:
+    image: mccloud/subgen:2026.06.3
+    container_name: subgen
+    restart: unless-stopped
+    tty: true
+    ports:
+      - target: 9000
+        published: "19000"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/models
+        target: /subgen/models
+      - type: bind
+        source: /DATA/Media/TV
+        target: /tv
+      - type: bind
+        source: /DATA/Media/Movies
+        target: /movies
+    environment:
+      TZ: $TZ
+      PUID: $PUID
+      PGID: $PGID
+      WEBHOOK_PORT: "9000"
+      TRANSCRIBE_DEVICE: cpu
+      WHISPER_MODEL: medium
+      WHISPER_THREADS: "4"
+      CONCURRENT_TRANSCRIPTIONS: "1"
+      MODEL_PATH: /subgen/models
+      PROCESS_ADDED_MEDIA: "true"
+      PROCESS_MEDIA_ON_PLAY: "false"
+      SUBTITLE_LANGUAGE_NAME: aa
+      SKIP_IF_INTERNAL_SUBTITLES_LANGUAGE: eng
+      LRC_FOR_AUDIO_FILES: "true"
+      WORD_LEVEL_HIGHLIGHT: "false"
+      CLEAR_VRAM_ON_COMPLETE: "true"
+      APPEND: "false"
+      DEBUG: "true"
+      UPDATE: "false"
+    x-casaos:
+      ports:
+        - container: "9000"
+          description:
+            en_US: Subgen API, webhook, and Swagger documentation port.
+            zh_CN: Subgen API、Webhook 和 Swagger 文档访问端口。
+      envs:
+        - container: WHISPER_MODEL
+          description:
+            en_US: Whisper model to download and use for transcription. Larger models need more disk, memory, and CPU time.
+            zh_CN: 用于转录的 Whisper 模型。更大的模型会占用更多磁盘、内存和 CPU 时间。
+        - container: WHISPER_THREADS
+          description:
+            en_US: Number of CPU threads used during transcription.
+            zh_CN: 转录时使用的 CPU 线程数。
+        - container: CONCURRENT_TRANSCRIPTIONS
+          description:
+            en_US: Maximum number of transcription jobs to run at the same time.
+            zh_CN: 同时运行的最大转录任务数量。
+        - container: SUBTITLE_LANGUAGE_NAME
+          description:
+            en_US: Language code suffix used when writing generated subtitle files.
+            zh_CN: 生成字幕文件时使用的语言代码后缀。
+        - container: SKIP_IF_INTERNAL_SUBTITLES_LANGUAGE
+          description:
+            en_US: Skip files that already contain an embedded subtitle track with this ISO 639-2 language code.
+            zh_CN: 如果文件已包含该 ISO 639-2 语言代码的内嵌字幕轨道，则跳过处理。
+      volumes:
+        - container: /subgen/models
+          description:
+            en_US: Downloaded Whisper model cache. Keep this volume to avoid re-downloading models after updates.
+            zh_CN: 下载的 Whisper 模型缓存。保留该目录可避免更新后重新下载模型。
+        - container: /tv
+          description:
+            en_US: TV media path visible to Subgen for Plex, Jellyfin, Emby, Tautulli, and batch processing.
+            zh_CN: Subgen 可访问的电视剧媒体路径，用于 Plex、Jellyfin、Emby、Tautulli 和批量处理。
+        - container: /movies
+          description:
+            en_US: Movie media path visible to Subgen for Plex, Jellyfin, Emby, Tautulli, and batch processing.
+            zh_CN: Subgen 可访问的电影媒体路径，用于 Plex、Jellyfin、Emby、Tautulli 和批量处理。
+
+x-casaos:
+  id: org.icewhale.subgen
+  main: subgen
+  index: /docs
+  port_map: "19000"
+  scheme: http
+  title:
+    en_US: Subgen
+    zh_CN: Subgen
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Subgen/icon.png
+  thumbnail: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Subgen/thumbnail.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Subgen/screenshot-1.png
+  tagline:
+    en_US: Local AI subtitle generation for media servers
+    zh_CN: 面向媒体服务器的本地 AI 字幕生成工具
+  description:
+    en_US: |
+      Subgen transcribes personal audio and video files into subtitles using faster-whisper and stable-ts. It can be used as a Bazarr Whisper provider, receive webhooks from Plex, Jellyfin, Emby, or Tautulli, expose OpenAI-compatible audio transcription endpoints, and run manual jobs through its API documentation.
+
+      This ZimaOS package uses the amd64 CPU-only image. Whisper models are cached under AppData, and optional `/tv` and `/movies` mounts let Subgen access the same media paths used by your media server when webhooks or batch jobs need direct file access.
+
+      **Notes:**
+      - Open `/docs` for the FastAPI Swagger interface.
+      - Configure Bazarr to use the Whisper endpoint at this NAS's LAN IP on port `19000`.
+      - For Plex, Jellyfin, Emby, or Tautulli webhooks, make sure Subgen sees media files at the same container paths as your media server, or adjust path mapping variables.
+    zh_CN: |
+      Subgen 使用 faster-whisper 和 stable-ts 将个人音频、视频文件转录为字幕。它可以作为 Bazarr 的 Whisper Provider 使用，也可以接收 Plex、Jellyfin、Emby 或 Tautulli 的 Webhook，提供兼容 OpenAI 的音频转录接口，并可通过 API 文档手动提交任务。
+
+      这个 ZimaOS 应用使用 amd64 CPU-only 镜像。Whisper 模型会缓存到 AppData 中，`/tv` 和 `/movies` 挂载可让 Subgen 在 Webhook 或批量任务需要直接访问文件时看到与媒体服务器一致的媒体路径。
+
+      **注意事项：**
+      - 打开 `/docs` 可访问 FastAPI Swagger 接口。
+      - 在 Bazarr 中将 Whisper endpoint 配置为本 NAS 局域网 IP 的 `19000` 端口。
+      - 如果使用 Plex、Jellyfin、Emby 或 Tautulli Webhook，请确保 Subgen 与媒体服务器看到相同的容器媒体路径，或自行调整路径映射变量。
+  tips:
+    before_install:
+      en_US: |
+        ## Resource and Setup Notes
+
+        - This package runs on CPU. Transcription can be slow on low-power devices; reduce `WHISPER_MODEL` to `small`, `base`, or `tiny` if needed.
+        - First transcription downloads the selected Whisper model into `/subgen/models` and may take time.
+        - Subgen is an API/webhook service, not a full account-based web UI. Avoid exposing it directly to the public internet.
+        - The included thumbnail and screenshot are placeholder copies of the upstream icon because the upstream project does not ship UI screenshots.
+      zh_CN: |
+        ## 资源和配置提示
+
+        - 该应用使用 CPU 运行，低功耗设备上的转录速度可能较慢；如有需要可将 `WHISPER_MODEL` 改为 `small`、`base` 或 `tiny`。
+        - 首次转录会将所选 Whisper 模型下载到 `/subgen/models`，可能需要等待一段时间。
+        - Subgen 是 API/Webhook 服务，不是带账号系统的完整 Web UI，不建议直接暴露到公网。
+        - 当前缩略图和截图使用上游图标作为占位资源，因为上游项目未提供 UI 截图。
+  author: IceWhaleTech
+  developer: McCloudS
+  category: AI
+  architectures:
+    - amd64
+  version: "2026.06.4"
+  updateAt: "2026-06-07"
+  releaseNotes:
+    en_US: Initial ZimaOS AppStore packaging for Subgen CPU edition.
+    zh_CN: 首次将 Subgen CPU 版本打包为 ZimaOS 应用。
+  website: https://github.com/McCloudS/subgen
+  repo: https://github.com/McCloudS/subgen
+  support: https://github.com/McCloudS/subgen/issues
+  docs: https://github.com/McCloudS/subgen#readme
