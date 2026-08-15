@@ -1,0 +1,2 @@
+CORE_SECRET=harbor-core-secret-key-2024
+JOBSERVICE_SECRET=harbor-jobservice-secret-2024
