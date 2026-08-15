@@ -1,0 +1,94 @@
+name: distribution
+services:
+  distribution:
+    image: distribution/registry:v2.7.0
+    container_name: distribution
+    environment:
+      OTEL_TRACES_EXPORTER: none
+      REGISTRY_HTTP_ADDR: 0.0.0.0:5000
+      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /var/lib/registry
+      REGISTRY_STORAGE_DELETE_ENABLED: "true"
+    network_mode: bridge
+    ports:
+      - target: 5000
+        published: "5000"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/registry
+        target: /var/lib/registry
+    x-casaos:
+      ports:
+        - container: "5000"
+          description:
+            en_US: Registry HTTP API port.
+            zh_CN: Registry HTTP API 访问端口。
+      envs:
+        - container: OTEL_TRACES_EXPORTER
+          description:
+            en_US: OpenTelemetry trace exporter. Keep as none to avoid exporting traces by default.
+            zh_CN: OpenTelemetry 跟踪导出器。保持 none 可避免默认导出跟踪数据。
+        - container: REGISTRY_HTTP_ADDR
+          description:
+            en_US: Address and port the registry listens on inside the container.
+            zh_CN: Registry 在容器内监听的地址和端口。
+        - container: REGISTRY_STORAGE_DELETE_ENABLED
+          description:
+            en_US: Enables manifest deletion support for registry maintenance.
+            zh_CN: 启用镜像清单删除支持，便于 Registry 维护。
+      volumes:
+        - container: /var/lib/registry
+          description:
+            en_US: Registry image layer and manifest storage directory.
+            zh_CN: Registry 镜像层和清单数据存储目录。
+x-casaos:
+  id: org.icewhale.distribution
+  main: distribution
+  index: /v2/
+  port_map: "5000"
+  scheme: http
+  title:
+    en_US: Distribution Registry
+    zh_CN: Distribution Registry
+  icon: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Distribution/icon.svg
+  thumbnail: https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Distribution/thumbnail.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/runui/zimaos-appstore@selfhost/Apps/Distribution/screenshot-1.png
+  tagline:
+    en_US: Store and serve OCI container images.
+    zh_CN: 存储并分发 OCI 容器镜像。
+  description:
+    en_US: |
+      Distribution Registry is the open source OCI/Docker registry implementation used to store, manage, and serve container images and other OCI artifacts.
+
+      This package runs the upstream registry image as a lightweight single-service HTTP API on port 5000. Image layers and manifests are persisted under the app data directory.
+    zh_CN: |
+      Distribution Registry 是开源的 OCI/Docker Registry 实现，可用于存储、管理和分发容器镜像及其他 OCI 制品。
+
+      此应用使用上游 Registry 镜像，以轻量单服务 HTTP API 形式运行在 5000 端口。镜像层和清单数据会持久化到应用数据目录。
+  tips:
+    before_install:
+      en_US: |
+        This app exposes a registry API, not a graphical Web UI. The health endpoint is available at /v2/.
+
+        The default configuration has no authentication and no TLS. Do not expose this port to untrusted networks without adding a reverse proxy, TLS, and access control.
+      zh_CN: |
+        此应用提供 Registry API，不包含图形化 Web UI。健康检查入口为 /v2/。
+
+        默认配置没有身份验证，也没有 TLS。请勿在未配置反向代理、TLS 和访问控制的情况下将此端口暴露到不可信网络。
+  author: IceWhaleTech
+  developer: Distribution Project
+  category: Developer
+  architectures:
+    - amd64
+    - arm64
+  version: "2.7.0"
+  update_at: "2026-06-28"
+  release_notes:
+    en_US: Switch to distribution/registry v2.7.0, the classic OCI registry stable line.
+    zh_CN: 迁移至 distribution/registry v2.7.0 经典 OCI Registry 稳定版本。
+  website: https://distribution.github.io/distribution/
+  repo: https://github.com/distribution/distribution
+  support: https://github.com/distribution/distribution/issues
+  docs: https://distribution.github.io/distribution/
