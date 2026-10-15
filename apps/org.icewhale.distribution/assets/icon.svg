@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Distribution Registry">
+  <rect width="256" height="256" rx="56" fill="#0f172a"/>
+  <path d="M128 38 205 82v92l-77 44-77-44V82l77-44Z" fill="#416ba9"/>
+  <path d="M128 38 205 82l-77 44-77-44 77-44Z" fill="#74c3d5"/>
+  <path d="M128 126v92l77-44V82l-77 44Z" fill="#2f5596"/>
+  <path d="M128 126v92l-77-44V82l77 44Z" fill="#416ba9"/>
+  <path d="M91 102 128 81l37 21-37 21-37-21Z" fill="#e0f7ff" opacity=".95"/>
+  <path d="M83 142h90v19H83v-19Zm17 32h56v18h-56v-18Z" fill="#e0f7ff"/>
+</svg>

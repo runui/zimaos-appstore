@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "store_id": "runui-appstore",
+  "name": "ZimaOS AppStore",
+  "description": "Official ZimaOS application store, providing a curated collection of self-hosted applications.",
+  "maintainer": "IceWhaleTech",
+  "url": "https://github.com/runui/zimaos-appstore"
+}
